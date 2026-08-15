@@ -135,13 +135,14 @@
   .bar-row{display:grid;grid-template-columns:160px 1fr 64px;align-items:center;gap:12px;font-size:12.5px;}
   .bar-row .lbl{color:var(--muted);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .bar-row .track{background:var(--surface-2);border-radius:6px;height:15px;overflow:hidden;}
-  .bar-row .fill{height:100%;border-radius:6px;width:0;transition:width 1.1s cubic-bezier(.2,.7,.3,1);
-    background:linear-gradient(90deg,var(--accent-deep),var(--accent));}
+  .bar-row .fill{height:100%;border-radius:6px;position:relative;transform:scaleX(0);transform-origin:left;
+    background:linear-gradient(90deg,var(--accent-deep),var(--accent));
+    animation:growX .85s cubic-bezier(.2,.7,.3,1) forwards;}
   .bar-row .fill::after{content:"";position:absolute;inset:0;
     background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);
     transform:translateX(-100%);animation:shine 2.6s ease infinite;}
-  .bar-row .fill{position:relative}
   @keyframes shine{60%,100%{transform:translateX(100%)}}
+  @keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
   .bar-row .pct{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:700;font-size:12.5px;}
 
   /* ===== 表格 ===== */
@@ -515,7 +516,7 @@ function bars(elId, rows, max){
   el.innerHTML = rows.map(r => {
     const w = r.v / max * 100;
     return `<div class="bar-row"><span class="lbl" title="${r.l}">${r.l}</span>` +
-      `<span class="track"><span class="fill" data-w="${w.toFixed(1)}"></span></span>` +
+      `<span class="track"><span class="fill" style="width:${w.toFixed(1)}%"></span></span>` +
       `<span class="pct">${r.t}</span></div>`;
   }).join('');
 }
@@ -531,15 +532,6 @@ bars('normalize', [
 bars('fix', [
   {l:'修复前 mismatch', v:56, t:'56'}, {l:'修复后 mismatch', v:0, t:'0'},
 ], 56);
-
-// ===== 触发柱状图动画（进入视口时）=====
-const barIO = new IntersectionObserver(es => es.forEach(e => {
-  if(e.isIntersecting){
-    e.target.querySelectorAll('.fill').forEach(f => f.style.width = f.dataset.w + '%');
-    barIO.unobserve(e.target);
-  }
-}), {threshold:.2});
-document.querySelectorAll('.card').forEach(c => barIO.observe(c));
 
 // ===== hero 按钮平滑切换 =====
 document.querySelectorAll('.hero-cta a').forEach(a => {
