@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>材料科学文献驱动的科学发现智能体 · 可展示 Demo</title>
+<style>
+  :root{
+    --bg:#f5f7fb; --panel:#ffffff; --ink:#15243c; --muted:#5b6b84;
+    --blue:#1a3c6e; --blue2:#2d6cb5; --accent:#2d9cdb; --teal:#17b897;
+    --line:#e2e8f2; --gold:#e8a33d; --red:#e05d5d;
+    --shadow:0 8px 30px rgba(21,36,60,.08);
+    --mono:"SFMono-Regular","JetBrains Mono",Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.65;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* ===== Hero ===== */
+  header.hero{background:linear-gradient(135deg,#122a4d 0%,#1a3c6e 55%,#23539a 100%);
+    color:#fff;padding:46px 0 40px;}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.14em;color:#9fc4e8;
+    border:1px solid rgba(159,196,232,.4);border-radius:999px;padding:4px 12px;margin-bottom:14px;}
+  h1{font-size:30px;font-weight:700;letter-spacing:.5px;line-height:1.25;}
+  .sub{margin-top:10px;font-size:15px;color:#c6d7ea;max-width:760px;}
+  .kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:26px;}
+  .kpi{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+    border-radius:12px;padding:14px 12px;text-align:center;backdrop-filter:blur(4px);}
+  .kpi .n{font-size:26px;font-weight:800;color:#7fc1f5;font-variant-numeric:tabular-nums;}
+  .kpi .l{font-size:12px;color:#b7cde6;margin-top:2px;}
+
+  /* ===== Nav tabs ===== */
+  nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);z-index:50;}
+  nav .tabs{display:flex;gap:4px;overflow-x:auto;}
+  nav button{background:none;border:none;cursor:pointer;font-size:14.5px;color:var(--muted);
+    padding:14px 16px;border-bottom:3px solid transparent;white-space:nowrap;transition:.15s;}
+  nav button:hover{color:var(--blue)}
+  nav button.active{color:var(--blue);border-bottom-color:var(--blue2);font-weight:600;}
+
+  /* ===== Sections ===== */
+  section{display:none;padding:34px 0;}
+  section.active{display:block;animation:fade .35s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .sec-title{font-size:20px;font-weight:700;margin-bottom:6px;color:var(--blue);}
+  .sec-desc{font-size:13.5px;color:var(--muted);margin-bottom:20px;max-width:820px;}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    box-shadow:var(--shadow);padding:22px;margin-bottom:18px;}
+  .card h3{font-size:15.5px;color:var(--blue);margin-bottom:14px;}
+
+  /* ===== Pipeline flow ===== */
+  .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+  .flow .step{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    padding:14px 10px;text-align:center;position:relative;box-shadow:var(--shadow);}
+  .flow .step .idx{width:26px;height:26px;line-height:26px;margin:0 auto 8px;border-radius:50%;
+    background:var(--blue2);color:#fff;font-size:13px;font-weight:700;}
+  .flow .step .nm{font-size:13.5px;font-weight:600;}
+  .flow .step .en{font-size:11px;color:var(--muted);margin-top:2px;}
+  .flow .step::after{content:"→";position:absolute;right:-11px;top:50%;transform:translateY(-50%);
+    color:var(--accent);font-size:18px;font-weight:700;z-index:2;}
+  .flow .step:last-child::after{content:none;}
+  .phasebar{display:flex;align-items:center;gap:10px;margin:16px 0 6px;color:var(--muted);font-size:12.5px;}
+  .phasebar .tag{background:#eef4fb;color:var(--blue2);border-radius:6px;padding:3px 10px;font-weight:600;}
+  .phasebar .line{flex:1;height:1px;background:var(--line);}
+
+  /* ===== Bar charts ===== */
+  .bars{display:flex;flex-direction:column;gap:7px;}
+  .bar-row{display:grid;grid-template-columns:150px 1fr 64px;align-items:center;gap:10px;font-size:12.5px;}
+  .bar-row .lbl{color:var(--muted);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .bar-row .track{background:#eef2f8;border-radius:6px;height:16px;overflow:hidden;}
+  .bar-row .fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--blue2),var(--accent));
+    width:0;transition:width .9s cubic-bezier(.2,.7,.3,1);}
+  .bar-row .pct{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600;}
+
+  /* ===== Metrics table ===== */
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  th,td{padding:10px 8px;text-align:center;border-bottom:1px solid var(--line);}
+  th{background:#f0f4fa;color:var(--blue);font-weight:600;}
+  tr.hl td{background:#f2faf7;}
+  .pill{display:inline-block;border-radius:999px;padding:2px 10px;font-size:11.5px;font-weight:600;}
+  .pill.ok{background:#e4f6ef;color:#12805c;}
+  .pill.warn{background:#fdf3e3;color:#b07a16;}
+  .pill.bad{background:#fdeaea;color:#c14343;}
+
+  /* ===== Case chain ===== */
+  .chain{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;align-items:stretch;}
+  .chain .node{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fbfcfe;position:relative;}
+  .chain .node .k{font-size:11px;letter-spacing:.1em;color:var(--accent);font-weight:700;text-transform:uppercase;}
+  .chain .node h4{font-size:14px;margin:6px 0;color:var(--ink);}
+  .chain .node p{font-size:12.5px;color:var(--muted);}
+  .chain .node .ev{display:block;margin-top:10px;font-size:11px;color:var(--blue2);
+    background:#eef4fb;border-radius:6px;padding:5px 8px;font-family:var(--mono);}
+  .chain .arrow{align-self:center;font-size:22px;color:var(--accent);font-weight:700;text-align:center;}
+  .chain{grid-template-columns:1fr auto 1fr auto 1fr;}
+
+  .note{font-size:12px;color:var(--muted);background:#fbf6ee;border-left:3px solid var(--gold);
+    padding:9px 12px;border-radius:6px;margin-top:14px;}
+
+  footer{text-align:center;color:var(--muted);font-size:12px;padding:26px 0 40px;}
+  footer code{font-family:var(--mono);background:#eef2f8;border-radius:4px;padding:1px 6px;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">GOAI · AI for Research · 方向三</span>
+    <h1>材料科学文献驱动的科学发现智能体</h1>
+    <p class="sub">面向 Li<sub>6</sub>PS<sub>5</sub>Cl 固态电解质：从 778 篇文献证据出发，经检索、结构化抽取、单位归一化与跨文献矛盾检测，自主识别 Research Gap、生成可证伪假设与合成路线，全程可回溯、可复跑审计。</p>
+    <div class="kpis">
+      <div class="kpi"><div class="n" data-n="778">0</div><div class="l">文献全文 / 记录</div></div>
+      <div class="kpi"><div class="n" data-n="19">0</div><div class="l">Research Gap</div></div>
+      <div class="kpi"><div class="n" data-n="20">0</div><div class="l">候选假设</div></div>
+      <div class="kpi"><div class="n" data-n="12">0</div><div class="l">合成路线 / 逆合成</div></div>
+      <div class="kpi"><div class="n" data-n="85">0</div><div class="l">跨文献矛盾对</div></div>
+      <div class="kpi"><div class="n" data-n="0">0</div><div class="l">证据链 mismatch</div></div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap tabs">
+    <button data-t="overview" class="active">总览</button>
+    <button data-t="pipeline">流程</button>
+    <button data-t="data">证据与数据</button>
+    <button data-t="case">发现案例</button>
+    <button data-t="audit">审计与验收</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- ============ 总览 ============ -->
+  <section id="overview" class="active">
+    <div class="sec-title">这个智能体在解决什么问题</div>
+    <div class="sec-desc">固态电解质文献量庞大、跨论文性能口径不一致（同一 Li<sub>6</sub>PS<sub>5</sub>Cl 的电导率在不同论文间可差 2–3 个数量级）。本系统把"读文献→找空白→提假设→出路线"这条科研闭环，做成了<b>证据可回溯、每步可复跑、审计可抓错</b>的确定性流水线。</div>
+
+    <div class="card">
+      <h3>两层架构：确定性证据层 + AgentScope 认知层</h3>
+      <table>
+        <tr><th style="width:34%">层</th><th>职责</th><th style="width:34%">实现</th></tr>
+        <tr><td><b>数据 / 审计层</b></td><td style="text-align:left">检索、筛选、全文、结构化抽取、单位归一化、矛盾检测、报告、审计</td><td>自研 Python 标准库，<b>零第三方依赖</b></td></tr>
+        <tr class="hl"><td><b>认知层</b></td><td style="text-align:left">Research Gap → 假设生成 → 候选路线 → 反证收缩（discover 循环）</td><td>AgentScope 2.0（唯一运行时依赖）</td></tr>
+      </table>
+      <div class="note">★ 核心设计：<b>证据链</b> <code>doc_id → record_id → 全文内容</code> 全程可回溯；<b>追加式增量写入</b>；<b>硬预算上限</b>（LLM 1200 / Sciverse 3000 / Materials Project 100）。</div>
+    </div>
+
+    <div class="card">
+      <h3>一句话成果</h3>
+      <p style="font-size:14px">在 778 篇文献上跑通<b>检索→抽取→知识融合→科学发现→报告</b>全闭环，产出 19 个 Gap、20 条假设、12 条路线；跨文献矛盾检测把同配方电导率 2–3 个数量级的分散<b>量化成了 85 条可追溯矛盾对</b>；证据链自检修复后 <b>audit 判定 PASS</b>。</p>
+    </div>
+  </section>
+
+  <!-- ============ 流程 ============ -->
+  <section id="pipeline">
+    <div class="sec-title">流水线全流程</div>
+    <div class="sec-desc">9 个步骤，分两个阶段：第一阶段产出结构化、规范化的证据，第二阶段在证据上做科学发现。</div>
+
+    <div class="phasebar"><span class="tag">阶段一 · 证据工程（确定性，无 LLM 推理）</span><span class="line"></span></div>
+    <div class="flow">
+      <div class="step"><div class="idx">1</div><div class="nm">检索</div><div class="en">Sciverse 语义检索</div></div>
+      <div class="step"><div class="idx">2</div><div class="nm">筛选</div><div class="en">领域规则去噪</div></div>
+      <div class="step"><div class="idx">3</div><div class="nm">全文获取</div><div class="en">778 篇内容落地</div></div>
+      <div class="step"><div class="idx">4</div><div class="nm">结构化抽取</div><div class="en">LLM → 11 字段 JSON</div></div>
+      <div class="step"><div class="idx">5</div><div class="nm">单位归一化</div><div class="en">电导率 → S/cm</div></div>
+    </div>
+    <div class="flow" style="margin-top:12px">
+      <div class="step"><div class="idx">6</div><div class="nm">矛盾检测</div><div class="en">跨文献 ≥10× 成对</div></div>
+      <div class="step"><div class="idx">7</div><div class="nm">Research Gap</div><div class="en">19 个空白识别</div></div>
+      <div class="step"><div class="idx">8</div><div class="nm">假设 / 路线</div><div class="en">20 假设 · 12 路线</div></div>
+      <div class="step"><div class="idx">9</div><div class="nm">反证收缩</div><div class="en">找先例、删重复声明</div></div>
+      <div class="step"><div class="idx">✓</div><div class="nm">报告 / 审计</div><div class="en">确定性渲染 + PASS</div></div>
+    </div>
+
+    <div class="card" style="margin-top:22px">
+      <h3>关键复跑命令（全部离线可复现）</h3>
+      <table style="font-family:var(--mono);font-size:12.5px">
+        <tr><th>步骤</th><th style="text-align:left">命令</th><th>产出</th></tr>
+        <tr><td>规范/矛盾</td><td style="text-align:left">python -m agent.run --stage normalize / contradictions</td><td>normalized_conductivity / contradictions.jsonl</td></tr>
+        <tr><td>报告</td><td style="text-align:left">python -m agent.run --stage report --snapshot 20260815</td><td>调研报告_auto_20260815.md</td></tr>
+        <tr><td>审计</td><td style="text-align:left">python -m agent.run --stage audit</td><td>audit_*.json → PASS</td></tr>
+        <tr><td>检索自评</td><td style="text-align:left">python -m agent.run --stage retrieval-eval</td><td>P@K / nDCG@K</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 证据与数据 ============ -->
+  <section id="data">
+    <div class="sec-title">真实运行数据</div>
+    <div class="sec-desc">以下所有数字均来自本地运行产物（<code>data/99_logs/</code> 与 <code>data/02_knowledge/</code>），非虚构。</div>
+
+    <div class="card">
+      <h3>语料规模与核心体系</h3>
+      <div class="bars" id="corpus"></div>
+    </div>
+
+    <div class="card">
+      <h3>字段覆盖率（11 个结构化字段，778 条记录）</h3>
+      <div class="bars" id="coverage"></div>
+    </div>
+
+    <div class="card">
+      <h3>电导率单位归一化（283 种写法 → 统一 S/cm）</h3>
+      <div class="bars" id="normalize"></div>
+      <div class="note">可归一单值 <b>188 条</b>，值域 1e-9 ~ 2e-1 S/cm、中位 1 mS/cm；multi/geq/approx/unparseable 如实标记，<b>不猜测数值</b>。</div>
+    </div>
+
+    <div class="card">
+      <h3>四臂对照（路线生成质量审计，2026-08-04 语料）</h3>
+      <table>
+        <tr><th style="text-align:left">生成臂</th><th>路线数</th><th>有证据步骤</th><th>无证据断言</th><th>温度标签合规</th><th>约束通过</th><th>先例命中</th><th>反证收缩</th></tr>
+        <tr><td style="text-align:left">固定工艺基线</td><td>1</td><td>100%</td><td>0%</td><td>100%</td><td>100%</td><td>50%</td><td>0%</td></tr>
+        <tr><td style="text-align:left">纯 LLM 基线</td><td>10</td><td>0%</td><td>100%</td><td>100%</td><td>100%</td><td>63%</td><td>0%</td></tr>
+        <tr><td style="text-align:left">随机拼接基线</td><td>20</td><td>0%</td><td>100%</td><td>52%</td><td>84%</td><td>50%</td><td>0%</td></tr>
+        <tr class="hl"><td style="text-align:left"><b>文献 Agent（本系统）</b></td><td>12</td><td><b>100%</b></td><td><b>0%</b></td><td>83%</td><td>98%</td><td>17%</td><td><b>10%</b></td></tr>
+      </table>
+      <div class="note">对照审计是对<b>证据链与化学/先例合理性</b>的审计，不构成湿实验性能排行。本系统的路线<b>每条步骤都可回溯到原文锚点</b>（有证据 100%、无证据断言 0%）。</div>
+    </div>
+
+    <div class="card">
+      <h3>检索质量自评估（317 query，规则弱标注）</h3>
+      <div class="kpis" style="grid-template-columns:repeat(4,1fr)">
+        <div class="kpi" style="border-color:var(--line)"><div class="n" style="color:var(--blue2)">0.658</div><div class="l" style="color:var(--muted)">P_strong@10</div></div>
+        <div class="kpi" style="border-color:var(--line)"><div class="n" style="color:var(--blue2)">0.440</div><div class="l" style="color:var(--muted)">Recall_rel@10</div></div>
+        <div class="kpi" style="border-color:var(--line)"><div class="n" style="color:var(--blue2)">0.875</div><div class="l" style="color:var(--muted)">nDCG@10</div></div>
+        <div class="kpi" style="border-color:var(--line)"><div class="n" style="color:var(--gold)">34.8%</div><div class="l" style="color:var(--muted)">检索噪声占比</div></div>
+      </div>
+      <div class="note">检索噪声 34.8% 表明"检索层仍需领域过滤"，这正是系统在筛选（screen）阶段做的事。规则弱标注 ≠ 人工标注基准，升级路径 = 30–50 篇人工相关性标注集。</div>
+    </div>
+  </section>
+
+  <!-- ============ 发现案例 ============ -->
+  <section id="case">
+    <div class="sec-title">一次完整的科学发现闭环</div>
+    <div class="sec-desc">以 discover 循环自主产出的 <b>gap_012</b> 为例：从两条独立文献证据识别出"从未被联合探索"的维度，生成可证伪假设，并落到一条可执行路线。</div>
+
+    <div class="chain">
+      <div class="node">
+        <span class="k">Research Gap · gap_012</span>
+        <h4>多价阳离子晶界掺杂 × 富卤/混卤，两轴从未联合</h4>
+        <p>文献已分别报道"Ca²⁺/Y³⁺ 晶界掺杂改善界面"与"富卤素/混卤提升体相无序"，但两条机理互补的掺杂轴<b>从未在同一体系联合报道</b>。</p>
+        <span class="ev">依据 record：rec_310 · rec_345 · rec_287</span>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <span class="k">Hypothesis · hyp_013</span>
+        <h4>晶界 Ca²⁺/Y³⁺ 掺杂 + 体相 Cl/Br 混卤协同</h4>
+        <p>假设：在 Li<sub>6</sub>PS<sub>5</sub>Cl₁₋ₓBrₓ 上引入晶界 Ca/Y 掺杂，<b>同时</b>提升体相电导率与界面稳定性（可证伪：预期电导率与湿度耐受相对单因素均提升）。</p>
+        <span class="ev">linked_gap：gap_012</span>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <span class="k">Route · route_E</span>
+        <h4>Ca/Y 共掺混卤 argyrodite 的球磨 + 退火路线</h4>
+        <p>给出前驱体配比、球磨参数、退火窗口与测量口径（含温度标签），每步锚定原文证据，可直接作为 DOE 湿实验协议输入。</p>
+        <span class="ev">倒推：hyp_013 → gap_012 → rec_310/345/287</span>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <h3>这条链为什么可信</h3>
+      <table>
+        <tr><th style="text-align:left">性质</th><th style="text-align:left">保证机制</th></tr>
+        <tr><td>证据可回溯</td><td style="text-align:left">每条 gap/假设/路线的 <code>evidence_doc_ids</code> 经修复后与 records 真实 doc_id 完全一致（mismatch = 0）</td></tr>
+        <tr><td>不夸大新颖性</td><td style="text-align:left">反证收缩先查先例，把"生成看似新颖配方"收敛为"严格证据边界下的可证伪假设"</td></tr>
+        <tr><td>口径可比</td><td style="text-align:left">路线强制带测量温度标签，避免跨论文性能误判</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 审计与验收 ============ -->
+  <section id="audit">
+    <div class="sec-title">审计、修复与诚实披露</div>
+    <div class="sec-desc">本系统把"审计自身"也做成了确定性流程，并如实披露修复过程——<b>纠正而非掩盖</b>。</div>
+
+    <div class="card">
+      <h3>审计结果</h3>
+      <table>
+        <tr><th>检查项</th><th>结果</th><th>判定</th></tr>
+        <tr><td style="text-align:left">gaps 锚点有效</td><td>19 / 19</td><td><span class="pill ok">PASS</span></td></tr>
+        <tr><td style="text-align:left">hypotheses 锚点有效</td><td>20 / 20</td><td><span class="pill ok">PASS</span></td></tr>
+        <tr><td style="text-align:left">routes 锚点有效</td><td>12 / 12</td><td><span class="pill ok">PASS</span></td></tr>
+        <tr><td style="text-align:left">record_id ↔ doc_id 配对一致</td><td>0 mismatch</td><td><span class="pill ok">PASS</span></td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>证据链修复（不掩盖，留痕可复现）</h3>
+      <div class="bars" id="fix"></div>
+      <div class="note">发现 discover 循环曾把某些 gap 的 <code>doc_id</code> 复用/伪造（<b>56 处</b> mismatch）——修复脚本按 record 反查回填、audit 新增配对校验，现已 <b>0</b>。检测/修复脚本与备份全部保留，任何人可复跑复核。</div>
+    </div>
+
+    <div class="card">
+      <h3>三条红线（本系统的自我约束）</h3>
+      <p style="font-size:13.5px">① 候选 Gap/假设/路线均为<b>待证伪假设</b>，不对应湿实验性能保证；② 不为了 PASS 而放宽审计，相反把"审计漏掉的问题"补进审计；③ 矛盾检测为<b>未对齐测量温度的初筛</b>，数值仅用于领域聚焦度自评估。</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    材料科学文献驱动的科学发现智能体 · Demo —— 数据全部来自本地运行产物，可经 <code>python -m agent.run --stage {search,screen,content,extract,normalize,contradictions,report,audit,retrieval-eval}</code> 复跑。<br>
+    GOAI · AI for Research · 方向三（Li<sub>6</sub>PS<sub>5</sub>Cl argyrodite）
+  </div>
+</footer>
+
+<script>
+// ===== Tab 切换 =====
+const tabs = document.querySelectorAll('nav button');
+const sections = document.querySelectorAll('main section');
+tabs.forEach(b => b.addEventListener('click', () => {
+  tabs.forEach(x => x.classList.remove('active'));
+  b.classList.add('active');
+  sections.forEach(s => s.classList.toggle('active', s.id === 'overview' ? (b.dataset.t === 'overview') : s.id === b.dataset.t));
+}));
+
+// ===== 数字滚动 =====
+function animateNumbers(){
+  document.querySelectorAll('[data-n]').forEach(el => {
+    const target = +el.dataset.n;
+    const dur = 900, t0 = performance.now();
+    (function tick(t){
+      const p = Math.min(1, (t - t0) / dur);
+      const e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * e);
+      if(p < 1) requestAnimationFrame(tick);
+    })(t0);
+  });
+}
+animateNumbers();
+
+// ===== 柱状图渲染 =====
+function bars(elId, rows, max){
+  const el = document.getElementById(elId);
+  el.innerHTML = rows.map(r => {
+    const w = max ? (r.v / max * 100) : r.v;
+    return `<div class="bar-row">
+      <span class="lbl" title="${r.l}">${r.l}</span>
+      <span class="track"><span class="fill" data-w="${w.toFixed(1)}"></span></span>
+      <span class="pct">${r.t}</span></div>`;
+  }).join('');
+}
+// 语料规模
+bars('corpus', [
+  {l:'全文 / 记录（篇）', v:778, t:'778'},
+  {l:'核心 argyrodite 记录（17.1%）', v:17.1, t:'133'},
+  {l:'Research Gap', v:19, t:'19'},
+  {l:'候选假设', v:20, t:'20'},
+  {l:'候选路线', v:12, t:'12'},
+].map(r => ({...r, v: Math.min(100, r.v)})), 100);
+// 字段覆盖率
+const cover = [
+  ['system',70.3],['precursor',34.4],['synthesis_route',48.8],['ball_milling',22.9],
+  ['annealing_temp',18.1],['annealing_time',12.5],['conductivity',39.2],['measurement_temp',26.3],
+  ['activation_energy',13.2],['dopant',23.7],['air_stability',12.2]
+];
+bars('coverage', cover.map(([l,v]) => ({l, v, t: v.toFixed(1)+'%'})), 100);
+// 归一化
+bars('normalize', [
+  {l:'可归一单值 exact', v:188, t:'188'},
+  {l:'多值/比较 multi', v:68, t:'68'},
+  {l:'下界 geq（>x）', v:12, t:'12'},
+  {l:'近似 approx（~）', v:13, t:'13'},
+  {l:'无法解析 unparseable', v:23, t:'23'},
+  {l:'字段为空 empty', v:473, t:'473'},
+], 473);
+// 修复
+bars('fix', [
+  {l:'修复前 mismatch', v:56, t:'56'},
+  {l:'修复后 mismatch', v:0, t:'0'},
+], 56);
+
+// ===== 触发柱状图动画 =====
+requestAnimationFrame(() => requestAnimationFrame(() => {
+  document.querySelectorAll('.fill').forEach(f => { f.style.width = f.dataset.w + '%'; });
+}));
+</script>
+</body>
+</html>
