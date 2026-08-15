@@ -1,0 +1,120 @@
+# 扩充查询词表 v1（第一轮标准扩充 · 四维交叉: 体系 × 掺杂 × 工艺 × 性能）
+# 每行一个查询, 交给 agent search 阶段。Sciverse 语义检索, top_k 默认 30。
+
+# --- A. 体系 × 合成工艺 ---
+argyrodite Li6PS5Cl solid state reaction synthesis
+argyrodite Li6PS5Cl mechanochemical milling synthesis route
+argyrodite Li6PS5Cl direct annealing precursor synthesis
+argyrodite Li6PS5Cl hot pressing densification
+argyrodite Li6PS5Cl spark plasma sintering
+argyrodite Li6PS5Cl microwave assisted synthesis
+argyrodite Li6PS5Br mechanochemical synthesis conductivity
+argyrodite Li6PS5Br annealing temperature optimization
+argyrodite Li6PS5I synthesis activation iodine
+Li6PS5Cl secondary sintering pellet density
+argyrodite synthesis Li2S excess stoichiometry
+argyrodite cold pressing porosity reduction
+sulfide argyrodite synthesis yield scaling
+argyrodite crystallization annealing time effect
+argyrodite phase purity X-ray diffraction synthesis condition
+
+# --- B. 体系 × 性能 ---
+Li6PS5Cl ionic conductivity measurement impedance
+Li6PS5Cl activation energy lithium diffusion
+Li6PS5Br ionic conductivity comparison chlorine
+argyrodite conductivity enhancement halogen site
+Li6PS5Cl electrochemical stability voltage window
+Li6PS5Cl lithium metal anode compatibility
+argyrodite conductivity temperature dependence
+Li6PS5Cl phase transition temperature conductivity
+argyrodite lithium ion transport mechanism NMR
+sulfide argyrodite density functional theory migration barrier
+
+# --- C. 卤素混配 / 富卤素 / Li-rich ---
+Li6PS5Cl Br mixed halide argyrodite conductivity
+Li6PS5Cl0.75Br0.25 halogen substitution ionic
+chlorine bromine co-doping argyrodite lattice
+Li-rich argyrodite Li6+xPS5-xCl1+x fast ion conductor
+lithium excess halogen deficient argyrodite
+halogen-poor argyrodite composition conductivity
+halogen-rich argyrodite Li5.5PS4.5Cl1.5
+argyrodite halide site disorder ionic transport
+Li6PS5I borohydride substitution activation
+sulfide iodide argyrodite mixed anion doping
+halogen mixing activation energy argyrodite
+
+# --- D. 掺杂元素 ---
+fluorine doped argyrodite Li6PS5F solid electrolyte
+aluminum doped argyrodite sulfide electrolyte
+tin doped argyrodite Li6PS5Cl
+oxygen substitution sulfide argyrodite stability
+silicon substituted argyrodite ionic conductivity
+germanium doped argyrodite thiophosphate
+calcium doped argyrodite sulfide electrolyte
+sodium doped argyrodite lithium conductor
+borohydride substituted argyrodite conductivity
+cation doping sulfide solid electrolyte battery
+copper doped argyrodite
+zinc doped argyrodite
+
+# --- E. 空气稳定性 / 界面 ---
+Li6PS5Cl air stability moisture H2S
+sulfide solid electrolyte water stability coating
+argyrodite humidity exposure degradation
+Li6PS5Cl surface modification hydrophobic coating
+sulfide electrolyte protective coating Li2O Li2S
+argyrodite storage stability inert atmosphere
+H2S gas generation sulfide electrolyte moisture
+oxide coating sulfide electrolyte stability
+Li6PS5Cl slurry processing stability
+
+# --- F. 工艺优化 / 放大 ---
+sulfide electrolyte synthesis process optimization yield
+argyrodite production scale up large scale
+mechanochemical synthesis optimization milling time
+annealing temperature window argyrodite conductivity
+secondary heat treatment sulfide electrolyte
+wet processing sulfide solid electrolyte
+solvent based synthesis argyrodite
+melt synthesis sulfide electrolyte
+co-precipitation synthesis sulfide solid electrolyte
+
+# --- G. 性能 / 应用 ---
+argyrodite solid state battery full cell
+Li6PS5Cl cathode composite electrode
+sulfide electrolyte high voltage stability
+argyrodite NCM cathode interface
+Li-S battery argyrodite electrolyte
+argyrodite all-solid-state lithium battery performance
+sulfide electrolyte cycling stability capacity retention
+argyrodite critical current density lithium dendrite
+sulfide solid electrolyte elasticity mechanical property
+argyrodite Young modulus pressibility
+
+# --- H. 综述 / 方法 ---
+argyrodite sulfide solid electrolyte review
+sulfide solid electrolytes overview conductivity stability
+solid electrolyte computational screening lithium
+machine learning sulfide electrolyte discovery
+argyrodite synthesis review halide
+
+# --- I. 交叉专项（掺杂 × 工艺 × 性能） ---
+Li6PS5Cl ball milling time conductivity optimization
+Li6PS5Cl annealing temperature 550 synthesis
+mixed halide argyrodite air stability
+Li-rich argyrodite battery performance
+fluorine chlorine co-doped argyrodite
+bromine iodine mixed argyrodite conductivity
+sulfide electrolyte pellet pressing temperature
+argyrodite secondary particle morphology
+sulfide electrolyte synthesis glovebox argon
+Li6PS5Cl moisture resistance improvement
+argyrodite electrochemical window decomposition
+thiophosphate solid electrolyte synthesis
+Li7PS6 solid electrolyte
+Li6PS5Cl grain boundary resistance
+argyrodite bulk ionic conductivity optimization
+sulfide electrolyte carbon coating additive
+Li6PS5Cl TiS2 anode interface
+sulfide electrolyte compatibility lithium metal
+argyrodite phase formation temperature

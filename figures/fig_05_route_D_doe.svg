@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="806.76pt" height="477.904187pt" viewBox="0 0 806.76 477.904187" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-02T22:03:50.746507</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 477.904187 
+L 806.76 477.904187 
+L 806.76 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 50.7798 232.866587 
+L 169.6338 232.866587 
+Q 197.3664 232.866587 197.3664 217.731467 
+L 197.3664 148.542347 
+Q 197.3664 133.407227 169.6338 133.407227 
+L 50.7798 133.407227 
+Q 23.0472 133.407227 23.0472 148.542347 
+L 23.0472 217.731467 
+Q 23.0472 232.866587 50.7798 232.866587 
+z
+" clip-path="url(#p188572cacc)" style="fill: #18344a"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 248.8698 232.866587 
+L 367.7238 232.866587 
+Q 395.4564 232.866587 395.4564 217.731467 
+L 395.4564 148.542347 
+Q 395.4564 133.407227 367.7238 133.407227 
+L 248.8698 133.407227 
+Q 221.1372 133.407227 221.1372 148.542347 
+L 221.1372 217.731467 
+Q 221.1372 232.866587 248.8698 232.866587 
+z
+" clip-path="url(#p188572cacc)" style="fill: #d69a2d"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 446.9598 232.866587 
+L 565.8138 232.866587 
+Q 593.5464 232.866587 593.5464 217.731467 
+L 593.5464 148.542347 
+Q 593.5464 133.407227 565.8138 133.407227 
+L 446.9598 133.407227 
+Q 419.2272 133.407227 419.2272 148.542347 
+L 419.2272 217.731467 
+Q 419.2272 232.866587 446.9598 232.866587 
+z
+" clip-path="url(#p188572cacc)" style="fill: #2b6f92"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 645.0498 232.866587 
+L 763.9038 232.866587 
+Q 791.6364 232.866587 791.6364 217.731467 
+L 791.6364 148.542347 
+Q 791.6364 133.407227 763.9038 133.407227 
+L 645.0498 133.407227 
+Q 617.3172 133.407227 617.3172 148.542347 
+L 617.3172 217.731467 
+Q 617.3172 232.866587 645.0498 232.866587 
+z
+" clip-path="url(#p188572cacc)" style="fill: #4e8a68"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 183.518477 183.136907 
+Q 205.290343 183.136907 225.385157 183.136907 
+" clip-path="url(#p188572cacc)" style="fill: none; stroke: #85939f; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 220.185157 180.536907 
+L 225.385157 183.136907 
+L 220.185157 185.736907 
+z
+" clip-path="url(#p188572cacc)" style="fill: #85939f; stroke: #85939f; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 381.608477 183.136907 
+Q 403.380343 183.136907 423.475157 183.136907 
+" clip-path="url(#p188572cacc)" style="fill: none; stroke: #85939f; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 418.275157 180.536907 
+L 423.475157 183.136907 
+L 418.275157 185.736907 
+z
+" clip-path="url(#p188572cacc)" style="fill: #85939f; stroke: #85939f; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 579.698477 183.136907 
+Q 601.470343 183.136907 621.565157 183.136907 
+" clip-path="url(#p188572cacc)" style="fill: none; stroke: #85939f; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 616.365157 180.536907 
+L 621.565157 183.136907 
+L 616.365157 185.736907 
+z
+" clip-path="url(#p188572cacc)" style="fill: #85939f; stroke: #85939f; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 50.7798 418.812347 
+L 359.8002 418.812347 
+Q 387.5328 418.812347 387.5328 403.677227 
+L 387.5328 356.109707 
+Q 387.5328 340.974587 359.8002 340.974587 
+L 50.7798 340.974587 
+Q 23.0472 340.974587 23.0472 356.109707 
+L 23.0472 403.677227 
+Q 23.0472 418.812347 50.7798 418.812347 
+z
+" clip-path="url(#p188572cacc)" style="fill: #2b6f92"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 446.9598 418.812347 
+L 755.9802 418.812347 
+Q 783.7128 418.812347 783.7128 403.677227 
+L 783.7128 356.109707 
+Q 783.7128 340.974587 755.9802 340.974587 
+L 446.9598 340.974587 
+Q 419.2272 340.974587 419.2272 356.109707 
+L 419.2272 403.677227 
+Q 419.2272 418.812347 446.9598 418.812347 
+z
+" clip-path="url(#p188572cacc)" style="fill: #b9574e"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 373.685845 379.893467 
+Q 403.381584 379.893467 431.400273 379.893467 
+" clip-path="url(#p188572cacc)" style="fill: none; stroke: #85939f; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 426.200273 377.293467 
+L 431.400273 379.893467 
+L 426.200273 382.493467 
+z
+" clip-path="url(#p188572cacc)" style="fill: #85939f; stroke: #85939f; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 9.5px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #85939f" x="7.2" y="31.586227" transform="rotate(-0 7.2 31.586227)">基线复现与测量口径控制路线；不预设电导率提升</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 10.2px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(83.686003 167.398945)">1. 基线制备</text>
+    <text style="font-weight: 700; font-size: 10.2px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(63.903581 179.718951)">Li2S + P2S5 + LiCl</text>
+    <text style="font-weight: 700; font-size: 10.2px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(80.771831 192.038957)">干燥 Ar 条件</text>
+    <text style="font-weight: 700; font-size: 10.2px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(90.745519 204.358964)">rec_107</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 10.2px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(281.776003 167.398945)">2. 时间序列</text>
+    <text style="font-weight: 700; font-size: 10.2px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(271.989581 179.718951)">550 C 压片烧结</text>
+    <text style="font-weight: 700; font-size: 10.2px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(262.821534 192.038957)">2 / 4 / 6 / 8 / 10 h</text>
+    <text style="font-weight: 700; font-size: 10.2px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(288.835519 204.358964)">rec_107</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 10.2px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(469.666003 167.465882)">3. 对照与元数据</text>
+    <text style="font-weight: 700; font-size: 10.2px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(475.7868 179.785889)">粉末烧结对照</text>
+    <text style="font-weight: 700; font-size: 10.2px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(465.5868 192.105895)">压力、密度、几何</text>
+    <text style="font-weight: 700; font-size: 10.2px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(485.9868 204.425901)">逐样记录</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 10.2px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(677.956003 167.398945)">4. 联合表征</text>
+    <text style="font-weight: 700; font-size: 10.2px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(665.987737 179.718951)">XRD + 相对密度</text>
+    <text style="font-weight: 700; font-size: 10.2px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(660.201628 192.038957)">室温 EIS / 升温 EIS</text>
+    <text style="font-weight: 700; font-size: 10.2px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(658.634175 204.358964)">rec_107 + rec_217</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #18344a" x="38.8944" y="315.028667" transform="rotate(-0 38.8944 315.028667)">预注册的判定逻辑</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(110.79 376.443889)">同一组成、压实状态、热史与温度口径下</text>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(131.431523 389.126249)">比较压片致密化 / 保温时间趋势</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(485.97 376.443889)">不能重现文献趋势时，报告为条件敏感的负结果；</text>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #ffffff" transform="translate(533.22 389.126249)">不将升温电导率写为室温性能</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 9.5px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #85939f" x="38.8944" y="453.406907" transform="rotate(-0 38.8944 453.406907)">文献锚点：rec_107 报道 550 C 压片烧结 4 h 为 6.11 mS cm-1；rec_217 的 25 C 与 60 C 电导率必须分开比较。</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #18344a" x="7.2" y="22.272187" transform="rotate(-0 7.2 22.272187)">图 5  route_D：Li6PS5Cl 致密化与可比性 DOE</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p188572cacc">
+   <rect x="7.2" y="38.272187" width="792.36" height="432.432"/>
+  </clipPath>
+ </defs>
+</svg>

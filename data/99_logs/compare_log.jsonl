@@ -1,0 +1,2 @@
+{"timestamp": "2026-08-02T16:31:22.917927+00:00", "action": "gen_purellm", "n_routes": 4, "note": "审计日 2026-08-03 统一对照协议纯 LLM 臂生成"}
+{"timestamp": "2026-08-02T17:10:24.499251+00:00", "action": "gen_purellm", "n_routes": 10, "api_calls": 3}

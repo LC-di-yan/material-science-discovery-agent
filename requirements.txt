@@ -1,0 +1,5 @@
+# 方向三 固态电解质文献调研 Agent —— Python 依赖
+# 注意：AgentScope 2.0 要求 Python >= 3.11（本机 3.12.8 已验证）。
+# 仅 `--stage discover`（AgentScope 编排层）依赖 agentscope；
+# search/screen/content/extract/validate/evaluate/compare 等阶段为纯标准库实现。
+agentscope==2.0.5

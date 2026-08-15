@@ -1,0 +1,109 @@
+{
+  "evaluation_id": "evidence_quality_20260802_v2",
+  "revision": "v2 - 协议指标与统一对照协议（comparator_20260803.json）对齐；语料快照日期保持 2026-08-02",
+  "evaluation_type": "deterministic_local_evidence_baseline",
+  "scope": "Local JSON/JSONL corpus only; no LLM or network calls.",
+  "corpus": {
+    "content_files": 778,
+    "records": 778,
+    "unique_record_ids": 778,
+    "unique_record_doc_ids": 778,
+    "unextracted_content_files": 0,
+    "core_argyrodite_records": {
+      "count": 133,
+      "total": 778,
+      "percent": 17.1
+    }
+  },
+  "traceability": {
+    "record_doc_id_present_in_local_content": {
+      "count": 778,
+      "total": 778,
+      "percent": 100.0
+    },
+    "persisted_source_chunk": {
+      "count": 472,
+      "total": 778,
+      "percent": 60.7
+    },
+    "note": "Legacy records predate prospective source_chunk persistence. Their original content JSON remains the provenance source; see extraction_quality_audit_20260802.json."
+  },
+  "field_coverage": {
+    "system": {
+      "count": 547,
+      "total": 778,
+      "percent": 70.3
+    },
+    "precursor": {
+      "count": 268,
+      "total": 778,
+      "percent": 34.4
+    },
+    "synthesis_route": {
+      "count": 380,
+      "total": 778,
+      "percent": 48.8
+    },
+    "ball_milling": {
+      "count": 178,
+      "total": 778,
+      "percent": 22.9
+    },
+    "annealing_temp": {
+      "count": 141,
+      "total": 778,
+      "percent": 18.1
+    },
+    "annealing_time": {
+      "count": 97,
+      "total": 778,
+      "percent": 12.5
+    },
+    "conductivity": {
+      "count": 305,
+      "total": 778,
+      "percent": 39.2
+    },
+    "measurement_temp": {
+      "count": 205,
+      "total": 778,
+      "percent": 26.3
+    },
+    "activation_energy": {
+      "count": 103,
+      "total": 778,
+      "percent": 13.2
+    },
+    "dopant": {
+      "count": 184,
+      "total": 778,
+      "percent": 23.7
+    },
+    "air_stability": {
+      "count": 95,
+      "total": 778,
+      "percent": 12.2
+    }
+  },
+  "audit_sample": {
+    "reviewed_records": 10,
+    "direct_core_evidence": 9,
+    "restricted_or_theoretical_evidence": 1,
+    "audit_file": "data\\02_knowledge\\extraction_quality_audit_20260802.json"
+  },
+  "pre_registered_comparators": {
+    "fixed_process": "Literature-standard Li6PS5Cl route; compare only when composition, compaction, thermal history, and measurement temperature are recorded.",
+    "pure_llm": "Generate routes without retrieval, then measure supported-step rate and unsupported-claim rate against the same local corpus.",
+    "random_composition_process": "Randomly combine documented components and conditions, then measure chemical/evidence validity against the same rules.",
+    "metrics": [
+      "supported_step_rate",
+      "unsupported_claim_rate",
+      "measurement_temperature_label_compliance",
+      "composition_process_constraint_pass_rate",
+      "precedent_hit_rate",
+      "hypothesis_retraction_or_narrowing_rate_after_counterevidence"
+    ],
+    "result_status": "Protocol defined; comparator executed on 2026-08-03 (see data/99_logs/comparator_20260803.json)."
+  },
+  "interpretation": "This is a data-quality and traceability baseline, not a wet-lab performance result or a model-vs-model benchmark."
+}

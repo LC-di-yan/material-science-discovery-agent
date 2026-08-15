@@ -1,0 +1,106 @@
+# 扩充查询词表 v2（复赛全量扩充 · 目标 346 → 1000+ 全文）
+# 在 expansion_v1.txt 基础上新增六组：卤素混配扫描 / 掺杂体系 / 工艺维度 /
+# 稳定性维度 / 电导率提升 / 致密化。与 v1 组合使用：
+#   python -m agent.run --stage search --queries queries/expansion_v2.txt --top-k 30
+# 命中按 doc_id 跨运行去重，v1 已拉取的文献不会重复计入。
+
+# --- 1. 卤素混配扫描（Cl/Br/I/F 组成空间） ---
+Li6PS5Cl1-xBrx argyrodite composition series conductivity
+Li6PS5Cl Br I ternary halide argyrodite
+Li6PS5Cl0.5Br0.5 synthesis structure conductivity
+Li6PS5Cl0.5I0.5 mixed halide argyrodite
+fluorine substitution Li6PS5Cl-xFx argyrodite stability
+Li6PS5Br Cl substitution lattice parameter conductivity
+halide ratio optimization argyrodite Li6PS5X
+Li-rich halide argyrodite Li7PS6-xClx conductivity
+argyrodite Cl Br site occupancy disorder neutron diffraction
+Li6PS5Cl Br gradient composition solid electrolyte
+iodine activation argyrodite Li6PS5I LiI excess
+mixed halide argyrodite phase diagram composition
+Li5.5PS4.5ClxBr1.5-x composition scan conductivity
+argyrodite halide vacancy concentration ionic transport
+Li6PS5Cl Br I high entropy argyrodite
+
+# --- 2. 掺杂体系（O/Sn/Sb/Si/Al/Ca/Zr 及其他阳离子） ---
+oxygen doped argyrodite Li6PS5Cl O substitution stability
+antimony doped argyrodite sulfide electrolyte
+zirconium doped argyrodite Li6PS5Cl conductivity
+titanium doped argyrodite sulfide
+niobium doped argyrodite solid electrolyte
+yttrium doped argyrodite grain boundary
+calcium Y co-doped argyrodite multivalent cation
+multivalent cation doping argyrodite grain boundary engineering
+Sn Si co-substitution argyrodite Li6PS5Cl
+Al O co-doping argyrodite air stability
+Zn Ga substitution argyrodite lithium conductor
+transition metal doping argyrodite sulfide electrolyte
+dopant screening argyrodite ionic conductivity DFT
+rare earth doping sulfide solid electrolyte
+Bi Sb Te doping argyrodite site preference
+
+# --- 3. 工艺维度（球磨 / 烧结 / 压片 / 退火窗口） ---
+ball milling speed time argyrodite Li6PS5Cl optimization
+mechanochemical vs solid state argyrodite comparison
+one-pot mechanochemical synthesis argyrodite solvent-free
+milling ball-to-powder ratio sulfide electrolyte
+cold isostatic pressing sulfide electrolyte pellet
+uniaxial pressing pressure argyrodite density conductivity
+sintering temperature time map argyrodite densification
+annealing window argyrodite phase purity conductivity
+two-step heat treatment argyrodite core shell
+rapid thermal annealing sulfide solid electrolyte
+quenching vs slow cooling argyrodite disorder conductivity
+post-milling annealing argyrodite process sequence
+pellet thickness effect ionic conductivity measurement sulfide
+sintering additive LiI Li3PO4 argyrodite densification
+scalable continuous synthesis argyrodite extrusion
+
+# --- 4. 稳定性维度（空气 / 水分 / H2S / 包覆） ---
+Li6PS5Cl moisture resistance halide composition effect
+H2S evolution quantification sulfide electrolyte humidity
+air stable argyrodite coating oxide hydrophobic
+undecanethiol self-assembled monolayer sulfide electrolyte
+polymer coating argyrodite moisture protection
+Li2ZrO3 LiNbO3 coating argyrodite cathode interface
+core-shell argyrodite air stability conductivity retention
+dry room processing sulfide electrolyte manufacturability
+argyrodite hydrolysis mechanism H2S DFT
+surface passivation Li6PS5Cl oxygen exposure
+water resistant sulfide solid electrolyte design
+halide doping air stability tradeoff argyrodite
+argyrodite CO2 moisture co-exposure degradation
+
+# --- 5. 电导率提升（活化能 / 传输机制） ---
+activation energy reduction argyrodite halide disorder
+superionic argyrodite 10 mS cm design principle
+Li sublattice disorder argyrodite conductivity enhancement
+anisotropic lithium diffusion argyrodite single crystal
+grain boundary vs bulk conductivity argyrodite decoupling
+machine learning guided argyrodite conductivity optimization
+high throughput screening argyrodite composition conductivity
+conductivity enhancement Li excess argyrodite mechanism
+low activation energy argyrodite 0.2 eV
+NMR relaxation argyrodite lithium jump rate
+impedance decoupling grain boundary argyrodite pellet
+
+# --- 6. 致密化 / 可规模化 ---
+spark plasma sintering argyrodite relative density
+hot pressing temperature argyrodite densification conductivity
+cold sintering sulfide electrolyte low temperature densification
+porosity reduction argyrodite pellet ionic conductivity
+pressure assisted sintering sulfide solid electrolyte
+tape casting sulfide electrolyte membrane scalable
+solvent-free dry electrode sulfide electrolyte manufacturing
+roll pressing sulfide electrolyte sheet
+relative density target argyrodite pellet benchmark
+industrial scale up sulfide solid electrolyte cost
+
+# --- 7. 交叉专项（v1 未覆盖的联合查询） ---
+mixed halide argyrodite annealing window composition dependent
+Ca doped Li6PS5Cl0.5Br0.5 conductivity temperature label
+multivalent doping argyrodite sintering time optimization
+argyrodite direct annealing without milling mixed halide
+air stable high conductivity argyrodite simultaneous optimization
+composition process map argyrodite conductivity database
+argyrodite synthesis condition reporting standard comparability
+negative result argyrodite conductivity irreproducibility

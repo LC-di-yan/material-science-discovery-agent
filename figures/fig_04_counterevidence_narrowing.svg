@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="862.56pt" height="504.94075pt" viewBox="0 0 862.56 504.94075" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-02T22:03:50.146345</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 504.94075 
+L 862.56 504.94075 
+L 862.56 -0 
+L 0 -0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 32.6448 194.04043 
+L 829.9152 194.04043 
+" clip-path="url(#pc0d55d68ff)" style="fill: none; stroke: #cbd5db; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 32.6448 281.46931 
+L 829.9152 281.46931 
+" clip-path="url(#pc0d55d68ff)" style="fill: none; stroke: #cbd5db; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 32.6448 368.89819 
+L 829.9152 368.89819 
+" clip-path="url(#pc0d55d68ff)" style="fill: none; stroke: #cbd5db; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 32.6448 456.32707 
+L 829.9152 456.32707 
+" clip-path="url(#pc0d55d68ff)" style="fill: none; stroke: #cbd5db; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 9.5px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #85939f" x="7.2" y="30.561761" transform="rotate(-0 7.2 30.561761)">四项先例证据使早期“未报道”表述收敛为可逐项检验的条件化假设（gap_011）</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #18344a" x="32.6448" y="88.20547" transform="rotate(-0 32.6448 88.20547)">审计记录</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #18344a" x="176.832" y="88.20547" transform="rotate(-0 176.832 88.20547)">早期过宽表述</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #18344a" x="405.8352" y="88.20547" transform="rotate(-0 405.8352 88.20547)">扩充语料中的反证 / 限制</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #18344a" x="634.8384" y="88.20547" transform="rotate(-0 634.8384 88.20547)">更新后的可证伪边界</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #18344a" x="32.6448" y="161.82979" transform="rotate(-0 32.6448 161.82979)">rec_111</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #b9574e" transform="translate(176.832 158.544477)">Br-rich 无序 /</text>
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #b9574e" transform="translate(176.832 170.622915)">淬冷控制可作为强新颖性主张</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #d69a2d" transform="translate(405.8352 158.544477)">已有 Br-rich 组成与</text>
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #d69a2d" transform="translate(405.8352 170.622915)">淬冷/慢冷对照</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #4e8a68" transform="translate(634.8384 158.544477)">仅检验精确组成和变量组合；</text>
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #4e8a68" transform="translate(634.8384 170.622915)">不再称该概念未报道</text>
+   </g>
+   <g id="text_10">
+    <text style="font-style: italic; font-size: 8.7px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #85939f" x="32.6448" y="177.93511" transform="rotate(-0 32.6448 177.93511)">Do not claim Br-rich disordering or cooling control is unexplored. Attribute any numerical result to the exact composition and cooling treatment.</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #18344a" x="32.6448" y="249.25867" transform="rotate(-0 32.6448 249.25867)">rec_250</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #b9574e" transform="translate(176.832 245.973357)">Li6PS5Cl 保护壳层</text>
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #b9574e" transform="translate(176.832 258.051795)">作为泛化新概念</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #d69a2d" transform="translate(405.8352 245.973357)">约 50 nm 氧硫化物</text>
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #d69a2d" transform="translate(405.8352 258.051795)">保护层已有先例</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #4e8a68" transform="translate(634.8384 245.973357)">限定为具体表面化学；</text>
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #4e8a68" transform="translate(634.8384 258.051795)">不将“保护层”泛称无先例</text>
+   </g>
+   <g id="text_15">
+    <text style="font-style: italic; font-size: 8.7px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #85939f" x="32.6448" y="265.36399" transform="rotate(-0 32.6448 265.36399)">Do not claim that sulfide/oxide-like protective-shell concepts are absent. This is oxysulfide, not proof for every proposed oxide shell.</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #18344a" x="32.6448" y="336.68755" transform="rotate(-0 32.6448 336.68755)">rec_287</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #b9574e" transform="translate(176.832 333.402237)">富 Cl/Br 组成空间</text>
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #b9574e" transform="translate(176.832 345.480675)">整体未被探索</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #d69a2d" transform="translate(405.8352 333.402237)">x=0.4 / 0.8 / 1.2</text>
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #d69a2d" transform="translate(405.8352 345.480675)">组成扫描已有报道</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #4e8a68" transform="translate(634.8384 333.402237)">不再宣称全空间未探索；</text>
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #4e8a68" transform="translate(634.8384 345.480675)">以直接复核作为优化基准</text>
+   </g>
+   <g id="text_20">
+    <text style="font-style: italic; font-size: 8.7px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #85939f" x="32.6448" y="352.79287" transform="rotate(-0 32.6448 352.79287)">Do not claim the full Cl/Br-rich composition space is unexplored; use as an optimization benchmark requiring direct source confirmation for numeric values.</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #18344a" x="32.6448" y="424.11643" transform="rotate(-0 32.6448 424.11643)">rec_310</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #b9574e" transform="translate(176.832 420.831118)">多价离子晶界调控</text>
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #b9574e" transform="translate(176.832 432.909555)">可直接写为室温增益</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #d69a2d" transform="translate(405.8352 420.831118)">12.9 mS/cm（70 C）</text>
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #d69a2d" transform="translate(405.8352 432.909555)">和 13 mS/cm（50 C）</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #4e8a68" transform="translate(634.8384 420.831118)">高值必须带温度标签；</text>
+    <text style="font-size: 10px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #4e8a68" transform="translate(634.8384 432.909555)">室温结论单独核查</text>
+   </g>
+   <g id="text_25">
+    <text style="font-style: italic; font-size: 8.7px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #85939f" x="32.6448" y="440.22175" transform="rotate(-0 32.6448 440.22175)">Do not present these high-temperature values as room-temperature gains; the source indicates only slight room-temperature improvement.</text>
+   </g>
+   <g id="text_26">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #18344a" x="32.6448" y="474.73315" transform="rotate(-0 32.6448 474.73315)">Agent 的产出不只包含候选生成：当新增原文证据削弱主张时，系统保留反证并收缩假设空间。</text>
+   </g>
+   <g id="text_27">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #18344a" x="7.2" y="21.58875" transform="rotate(-0 7.2 21.58875)">图 4  扩充语料触发的反证与假设收缩</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pc0d55d68ff">
+   <rect x="7.2" y="37.58875" width="848.16" height="460.152"/>
+  </clipPath>
+ </defs>
+</svg>

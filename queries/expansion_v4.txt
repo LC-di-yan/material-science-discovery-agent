@@ -1,0 +1,75 @@
+# 扩充查询词表 v4（冲 1000+ · 每条锚定强关键词主题，按面细分避免重复）
+# 用法：python -m agent.run --stage search --queries queries/expansion_v4.txt --top-k 30
+# 设计：v3 泛主题过筛率低；v4 每条查询绑定 argyrodite / sulfide 强词面，
+# 覆盖 v1-v3 未触及的面：全电池集成 / 界面 / 薄膜与成型 / 玻璃陶瓷 /
+# 同族家族 / 计算与光谱表征 / 规模化工艺细节。
+
+# --- 1. 全电池集成（argyrodite 为电解质 + catholyte/composite） ---
+argyrodite Li6PS5Cl composite cathode solid-state battery cycling
+Li6PS5Cl electrolyte NCM cathode all-solid-state cell capacity retention
+Li6PS5Cl solid electrolyte separator layer thickness all-solid-state
+argyrodite catholyte mixture ratio ionic conductivity composite
+Li6PS5Br Li6PS5Cl blend electrolyte all-solid-state battery
+sulfide solid electrolyte anode interface lithium metal argyrodite
+Li6PS5Cl interlayer lithium metal protection dendrite
+all-solid-state cell sulfide electrolyte energy density benchmark
+
+# --- 2. 界面化学与包覆（argyrodite 专属面） ---
+argyrodite cathode interface side product XPS depth profile
+Li6PS5Cl cathode coating LiNbO3 Li2ZrO3 compatibility cycling
+argyrodite electrolyte oxidative stability window sulfide
+Li6PS5Cl reduction stability lithium metal interface impedance growth
+interphase formation sulfide solid electrolyte argyrodite operando
+space charge layer sulfide argyrodite cathode interface
+chemical compatibility argyrodite cathode active material study
+Li6PS5Cl interface engineering interlayer thin film protection
+
+# --- 3. 薄膜 / 成型 / 器件加工 ---
+argyrodite Li6PS5Cl thin film deposition conductivity
+pulsed laser deposition sulfide electrolyte argyrodite film
+sputtered Li6PS5Cl solid electrolyte thin film
+argyrodite membrane thin freestanding sulfide electrolyte
+thick film sulfide electrolyte screen printing argyrodite
+Li6PS5Cl pellet pressing pressure conductivity optimization
+sulfide electrolyte sheet flexible tape casting argyrodite
+binder effect sulfide electrolyte pellet ionic conductivity PTFE
+
+# --- 4. 玻璃陶瓷与结晶路线（硫化物强词面） ---
+Li3PS4 glass ceramic crystallization beta phase conductivity
+Li2S-P2S5 glass ceramic heat treatment argyrodite nucleation
+thiophosphate glass crystallization superionic conductor design
+sulfide glass ceramic two-step crystallization conductivity enhancement
+Li7P3S11 glass ceramic preparation ionic conductivity
+beta-Li3PS4 low temperature phase glass ceramic
+Li2S-P2S5 binary glass composition ionic conductivity window
+crystallization kinetics sulfide electrolyte glass XRD in situ
+
+# --- 5. 同族家族扩面（thio-LISICON / LGPS / LiSiPS） ---
+thio-LISICON Li3.25Ge0.25P0.75S4 conductivity composition
+LGPS Li10GeP2S12 germanium-free Si Sn analog conductivity
+Li7SiPS8 lithium silicon phosphorus sulfide conductivity
+Li9.54Si1.74P1.44S11.7Cl0.3 superionic argyrodite-type
+LGPS type electrolyte oxygen sulfur substitution stability
+Li10SnP2S12 tin analog LGPS conductivity synthesis
+thio-LISICON analog Si Ge Sn P sulfide family comparison
+argyrodite-type Li6PS5X family review structure conductivity
+
+# --- 6. 计算与光谱表征（argyrodite 专属） ---
+DFT activation barrier argyrodite Li6PS5Cl lithium migration
+ab initio molecular dynamics argyrodite sulfide conductivity prediction
+neutron diffraction argyrodite Li6PS5Cl lithium site occupancy
+Raman NMR argyrodite sulfide electrolyte local structure
+phonon lattice dynamics argyrodite thermal conductivity
+machine learning sulfide solid electrolyte formation energy stability
+grand canonical phase stability argyrodite voltage window DFT
+computational screening sulfide electrolyte conductivity stability
+
+# --- 7. 规模化工艺细节（球磨/烧结参数面） ---
+scalable synthesis argyrodite sulfide electrolyte batch scale
+Li6PS5Cl synthesis scale gram kilogram sulfide electrolyte
+continuous mechanochemical synthesis sulfide electrolyte scale up
+solvent-free synthesis argyrodite industrial process
+Li6PS5Cl one-step synthesis temperature time optimization
+sulfide electrolyte manufacturing cost dry room argyrodite
+recycling sulfide solid electrolyte argyrodite reprocessing
+pilot scale sulfide electrolyte production argyrodite process

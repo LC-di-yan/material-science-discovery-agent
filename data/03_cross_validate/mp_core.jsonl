@@ -1,0 +1,10 @@
+{"hyp": "baseline", "target": "Li6PS5Cl", "num": 1, "records": [{"material_id": "mp-aaacebzk", "formula_pretty": "Li6PS5Cl"}]}
+{"hyp": "baseline", "target": "Li6PS5Br", "num": 1, "records": [{"material_id": "mp-aaacebzj", "formula_pretty": "Li6PS5Br"}]}
+{"hyp": "baseline", "target": "Li6PS5I", "num": 2, "records": [{"material_id": "mp-aaacccut", "formula_pretty": "Li6PS5I"}, {"material_id": "mp-aaacebza", "formula_pretty": "Li6PS5I"}]}
+{"hyp": "hyp_001", "target": "Li6PS5ClBr", "num": 0, "records": []}
+{"hyp": "hyp_010", "target": "Li6PS5Cl0.5Br0.5", "num": 0, "records": []}
+{"target": "Li6PS5F0.3Cl0.7", "num": 0, "records": []}
+{"target": "Li6PS5Cl0.75Br0.25", "num": 0, "records": []}
+{"target": "Li5.5PS4.5Cl1.5", "num": 0, "records": []}
+{"target": "Li5.4PS4.4Cl1.6", "num": 0, "records": []}
+{"target": "Li6PS5", "num": 0, "records": []}

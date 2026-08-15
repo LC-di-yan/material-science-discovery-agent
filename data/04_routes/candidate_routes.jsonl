@@ -1,0 +1,415 @@
+{"route_id": "route_A", "hyp_id": "hyp_001", "target_composition": "Li6PS5Cl0.5Br0.5", "route_name": "混卤 argyrodite · 免球磨直接退火路线", "priority": 1, "linked_gap": "gap_001", "expected_performance": "室温离子电导率 3~5×10⁻³ S/cm（混卤 Cl0.5Br0.5 报道室温 3.9 mS/cm，rec_045；直接退火纯 Cl 报道 26.2°C 下 4.96×10⁻³ S/cm，rec_002）", "precursors": "Li2S(99.98%)、P2S5(99%)、LiCl(99.9%)、LiBr(99.9%)，摩尔比 Li2S:P2S5:LiCl:LiBr = 5:1:0.5:0.5", "steps": [
+  {"step": 1, "action": "Ar 手套箱内称量前驱体并充分研磨混匀（H2O/O2 < 0.1 ppm）", "conditions": "惰性气氛", "evidence": ["rec_003", "rec_002"]},
+  {"step": 2, "action": "混合前驱体直接装填退火（规避高能球磨，参考直接退火工艺）", "conditions": "550°C / 10 h", "evidence": ["rec_002"]},
+  {"step": 3, "action": "惰性气氛保护下退火后自然冷却", "conditions": "Ar 气氛", "evidence": ["rec_002", "rec_031"]},
+  {"step": 4, "action": "研磨，XRD 确认 argyrodite F-43m 相与卤素位有序度", "conditions": "XRD/Rietveld", "evidence": ["rec_040"]}
+], "validation": {"mp_core": "混卤组成在 Materials Project 无结构记录（计算库覆盖缺口→新颖性佐证）", "mp_thermo": "baseline Li6PS5Cl/Br 均为亚稳相（energy_above_hull 0.05~0.08 eV/atom，需控制温度窗口）", "evidence_level": "experimental + 数据库交叉"}, "novelty": "混卤通常球磨合成，直接退火路线在混卤体系未见报道", "rationale": "混卤提升电导率（rec_045）+ 直接退火简化工艺（rec_002）+ Br 软化晶格降活化能（rec_026）"}
+{"route_id": "route_B", "hyp_id": "hyp_004", "target_composition": "Li6PS5Cl0.75Br0.25 + UDSH 表面疏水修饰", "route_name": "混卤 argyrodite · 表面分子工程抗湿路线", "priority": 2, "linked_gap": "gap_001", "expected_performance": "室温离子电导率 ~3.2 mS/cm（混卤，rec_045 室温口径）+ 显著抗湿（UDSH 修饰保持电导率，rec_013）", "precursors": "Li2S、P2S5、LiCl、LiBr（摩尔比 5:1:0.75:0.25）；1-十一烷硫醇 (UDSH)", "steps": [
+  {"step": 1, "action": "高能球磨合成 Li6PS5Cl0.75Br0.25（ZrO2 罐，Ar 气氛）", "conditions": "30 min 高能球磨", "evidence": ["rec_020"]},
+  {"step": 2, "action": "退火优化卤素位有序度（参考富卤素退火窗口）", "conditions": "390-450°C 扫描", "evidence": ["rec_027"]},
+  {"step": 3, "action": "UDSH 表面接枝，形成疏水分子层阻断 H2O/H2S", "conditions": "液相接枝/真空干燥", "evidence": ["rec_013"]},
+  {"step": 4, "action": "表征：EIS 电导率、XRD、暴露实验（湿度/时间）", "conditions": "EIS/XRD/H2S 检测", "evidence": ["rec_013"]}
+], "validation": {"mp_core": "混卤组成在 Materials Project 无记录", "mp_thermo": "baseline 亚稳相；混卤无热力学数据", "evidence_level": "experimental + 文献证据链"}, "novelty": "混卤组成从未与表面疏水分子工程联合——同时解决电导率与空气稳定性两大矛盾", "rationale": "混卤电导率 3.2 mS/cm（rec_045）+ UDSH 抗湿保持电导率（rec_013）+ 表面工程抗湿（rec_013）"}
+{"route_id": "route_C", "hyp_id": "hyp_009", "target_composition": "Li5.5PS4.5Cl1.5（球磨无序化 + 退火致密化）", "route_name": "富氯 argyrodite · 无序化+退火窗口路线", "priority": 3, "linked_gap": "gap_003", "expected_performance": "活化能 ~0.35 eV（无序态），室温电导率 5×10⁻³ S/cm 级（富 Cl + 致密化；参考 rec_027 室温 5.21×10⁻³ S/cm，430°C/8h 退火窗口）", "precursors": "Li2S、P2S5、LiCl（富 Cl 化学计量 Li:PS:Cl = 5.5:4.5:1.5）", "steps": [
+  {"step": 1, "action": "高能球磨实现位无序（富 Cl 体系）", "conditions": "850 rpm，5 min 磨/15 min 停（Ar 手套箱）", "evidence": ["rec_024"]},
+  {"step": 2, "action": "退火窗口优化（富卤素体系电导率峰值）", "conditions": "430°C / 8 h", "evidence": ["rec_027"]},
+  {"step": 3, "action": "二次烧结致密化，减少孔隙缺陷", "conditions": "二次烧结", "evidence": ["rec_003"]},
+  {"step": 4, "action": "表征：变温 EIS（Ea）、相对密度、XRD", "conditions": "EIS/XRD", "evidence": ["rec_024", "rec_012"]}
+], "validation": {"mp_core": "富 Cl 组成无 MP 记录；Li6PS5Cl 结构 mp-aaacebzk", "mp_thermo": "Li6PS5Cl 亚稳（0.083 eV/atom）——无序+退火需控制结晶程度", "evidence_level": "experimental + 数据库交叉"}, "novelty": "富卤素 + 球磨无序化 + 退火窗口三因素从未联合", "rationale": "无序化降 Ea 至 0.35 eV（rec_024）+ 富卤素退火窗口 430°C（rec_027）+ 二次烧结致密（rec_003）"}
+{"route_id": "route_D", "hyp_id": "hyp_011", "target_composition": "Li6PS5Cl", "route_name": "Li6PS5Cl基线致密化与可比性验证路线", "priority": 4, "linked_gap": "gap_010", "expected_performance": "不预设性能提升；以550 C压片烧结4 h的6.11 mS cm-1文献点作为待复现实验锚点，所有结果同时报告测试温度、相对密度和压片/烧结形态。", "precursors": "Li2S、P2S5、LiCl（化学计量比；干燥Ar手套箱）", "steps": [{"step": 1, "action": "按Li6PS5Cl化学计量制备并执行已报道的球磨/550 C热处理基线", "conditions": "前驱体与550 C条件参照rec_107；具体球磨参数按原文或本次实验日志固定记录", "evidence": ["rec_107"]}, {"step": 2, "action": "对压片烧结样品进行2/4/6/8/10 h时间序列，并保留粉末烧结对照", "conditions": "550 C；压实压力、相对密度和保温时程必须逐样记录", "evidence": ["rec_107"]}, {"step": 3, "action": "在预注册的室温及升温点测EIS，并报告样品几何和温度", "conditions": "不得将升温数据标为室温；温度依赖参照rec_217", "evidence": ["rec_217"]}, {"step": 4, "action": "以XRD、相对密度和变温EIS联合判定工艺效应", "conditions": "相、晶界/致密度和温度分开归因", "evidence": ["rec_107", "rec_217"]}], "validation": {"mp_core": "Li6PS5Cl基线已有MP结构记录；MP仅作热力学/结构背景，不验证烧结路线。", "mp_thermo": "基线为亚稳相，热处理窗口仍需由实验相与性能共同确认。", "evidence_level": "experimental baseline + 数据库背景"}, "novelty": "不是新组成路线；作为所有新组合的可比性和复现实验门槛。", "rationale": "直接实验显示压片烧结、保温时长和测试温度都会改变Li6PS5Cl的表观电导率。"}
+{
+  "route_id": "route_E",
+  "hyp_id": "hyp_013",
+  "target_composition": "Li5.4PS4.4Cl1.6 + 0.02-0.03 CaS（或 0.02 YCl3）",
+  "route_name": "Ca²⁺/Y³⁺ 掺杂富卤素 argyrodite（Li5.4PS4.4Cl1.6 + 0.02-0.03 CaS/YCl3）机械球磨路线",
+  "priority": 5,
+  "linked_gap": "gap_012",
+  "expected_performance": "预期室温电导率 >10 mS/cm（富卤素本征 10 mS/cm，rec_345）+ 晶界电阻进一步降低（Ca/Y 掺杂，rec_310 在 50-70°C 达 12.9-13 mS/cm）。需按 gap_010 口径同时报告压实方式、相对密度与测量温度。",
+  "precursors": "Li2S、P2S5、LiCl（富卤素化学计量，Cl 过量至 Li5.4PS4.4Cl1.6）+ CaS 或 YCl3（0.02-0.03 摩尔分数）",
+  "steps": [
+    {
+      "step": 1,
+      "action": "在 Ar 手套箱中称量 Li2S、P2S5、LiCl（富卤素配比）与 CaS/YCl3，装入 ZrO2 球磨罐",
+      "conditions": "Ar 气氛，惰性环境",
+      "evidence": [
+        "rec_310",
+        "rec_345"
+      ]
+    },
+    {
+      "step": 2,
+      "action": "高能/机械球磨混合前驱体",
+      "conditions": "行星式球磨，转速与时长参照 rec_310 机械球磨（未后续热处理）",
+      "evidence": [
+        "rec_310"
+      ]
+    },
+    {
+      "step": 3,
+      "action": "压片成型并记录相对密度",
+      "conditions": "冷压，记录压实方式与相对密度（gap_010 口径）",
+      "evidence": [
+        "rec_310"
+      ]
+    },
+    {
+      "step": 4,
+      "action": "室温 EIS 测量并记录测量温度，评估体相与晶界电阻贡献",
+      "conditions": "室温及变温 EIS，报告测量温度",
+      "evidence": [
+        "rec_310",
+        "rec_345"
+      ]
+    }
+  ],
+  "created_by": "LiteratureDiscoveryAgent",
+  "created_at": "2026-08-03T13:10:24.685941+00:00"
+}
+{
+  "route_id": "route_F",
+  "hyp_id": "hyp_014",
+  "target_composition": "Li6PS4.5Se0.5Cl（Se 取代 S，x=0.5）",
+  "route_name": "Se 取代 argyrodite Li6PS4.5Se0.5Cl 的退火窗口筛选路线",
+  "priority": 6,
+  "linked_gap": "gap_013",
+  "expected_performance": "预期活化能接近 rec_574 报道的 0.22–0.25 eV 量级；若退火窗口优化得当，室温电导率有望高于纯 Cl 体系（参考 rec_027 富卤素 430°C 峰值窗口的工艺增益逻辑）。需同步记录相对密度与测量温度（gap_010 口径）。",
+  "precursors": "Li2S、P2S5、LiCl、Li2Se（Se 源），按 Li6PS4.5Se0.5Cl 化学计量配比",
+  "steps": [
+    {
+      "step": 1,
+      "action": "手套箱内称量 Li2S、P2S5、LiCl、Li2Se 前驱体并混合",
+      "conditions": "Ar 气氛，化学计量比 Li6PS4.5Se0.5Cl",
+      "evidence": [
+        "rec_574"
+      ]
+    },
+    {
+      "step": 2,
+      "action": "高能球磨混合前驱体引入无序化",
+      "conditions": "行星式球磨，Ar 气氛",
+      "evidence": [
+        "rec_024"
+      ]
+    },
+    {
+      "step": 3,
+      "action": "真空退火扫描温度窗口",
+      "conditions": "390–450°C 分段退火，记录相、相对密度、Ea 与室温 EIS",
+      "evidence": [
+        "rec_027",
+        "rec_024"
+      ]
+    },
+    {
+      "step": 4,
+      "action": "压片致密化并测量电导率",
+      "conditions": "记录压实方式、相对密度与测量温度（gap_010 口径）",
+      "evidence": [
+        "rec_574"
+      ]
+    }
+  ],
+  "created_by": "LiteratureDiscoveryAgent",
+  "created_at": "2026-08-04T04:34:08.805635+00:00"
+}
+{
+  "route_id": "route_G",
+  "hyp_id": "hyp_015",
+  "target_composition": "Li6PS4.8O0.2Cl（体相 O 取代 S，x=0.2）",
+  "route_name": "体相 O 取代 argyrodite Li6PS4.8O0.2Cl 的退火/热压致密化路线",
+  "priority": 7,
+  "linked_gap": "gap_014",
+  "expected_performance": "预期 O 取代改善空气/热稳定性（参考 rec_563 氧硫化物热稳定性增益）；热压+退火致密化有望改善电导率（rec_563 报道 LPSO HP+Annealed 优于冷压，但原文未注明测量温度，数值待复现核对）。需同步记录相对密度与测量温度（gap_010 口径）。",
+  "precursors": "Li2S、P2S5、LiCl、Li2O（O 源），按 Li6PS4.8O0.2Cl 化学计量配比",
+  "steps": [
+    {
+      "step": 1,
+      "action": "手套箱内称量 Li2S、P2S5、LiCl、Li2O 前驱体并混合",
+      "conditions": "Ar 气氛，化学计量比 Li6PS4.8O0.2Cl",
+      "evidence": [
+        "rec_563",
+        "rec_094"
+      ]
+    },
+    {
+      "step": 2,
+      "action": "高能球磨混合前驱体",
+      "conditions": "行星式球磨，Ar 气氛",
+      "evidence": [
+        "rec_094"
+      ]
+    },
+    {
+      "step": 3,
+      "action": "真空退火扫描温度窗口",
+      "conditions": "分段退火，记录相、相对密度、Ea 与室温 EIS",
+      "evidence": [
+        "rec_563"
+      ]
+    },
+    {
+      "step": 4,
+      "action": "热压致密化并测量电导率",
+      "conditions": "记录压实方式、相对密度与测量温度（gap_010 口径）",
+      "evidence": [
+        "rec_563"
+      ]
+    }
+  ],
+  "created_by": "LiteratureDiscoveryAgent",
+  "created_at": "2026-08-04T04:34:57.493500+00:00"
+}
+{
+  "route_id": "route_H",
+  "hyp_id": "hyp_016",
+  "target_composition": "Li6PS5Cl0.5Br0.5",
+  "route_name": "溶液法合成 Li6PS5Cl0.5Br0.5 混卤 argyrodite",
+  "priority": 8,
+  "linked_gap": "gap_015",
+  "expected_performance": "预期室温电导率 ≥3.9 mS/cm（混卤本征值，rec_045），接近溶液法纯 Br 的 1.94 mS/cm 之上限（rec_393）；需以同一组成标定热处理窗口与相对密度（rec_324 液相法 10^-2–10^-3 S/cm 量级）",
+  "precursors": "Li2S、P2S5、LiCl、LiBr（按 Li6PS5Cl0.5Br0.5 化学计量）；无水乙醇溶剂",
+  "steps": [
+    {
+      "step": 1,
+      "action": "将 Li2S、P2S5、LiCl、LiBr 按化学计量称量，溶于无水乙醇，搅拌形成均匀前驱体溶液",
+      "conditions": "惰性气氛（Ar），室温搅拌",
+      "evidence": [
+        "rec_324",
+        "rec_393"
+      ]
+    },
+    {
+      "step": 2,
+      "action": "真空干燥去除溶剂，得到前驱体粉末",
+      "conditions": "真空干燥",
+      "evidence": [
+        "rec_393",
+        "rec_477"
+      ]
+    },
+    {
+      "step": 3,
+      "action": "热处理结晶化，扫描温度窗口（如 400–550°C）以标定最优结晶度与电导率",
+      "conditions": "惰性气氛，400–550°C，记录相/相对密度/Ea/室温EIS",
+      "evidence": [
+        "rec_393",
+        "rec_324"
+      ]
+    },
+    {
+      "step": 4,
+      "action": "压片/烧结致密化并测量离子电导率，同步报告压实方式与测量温度",
+      "conditions": "压片烧结，记录相对密度与测试温度",
+      "evidence": [
+        "rec_045",
+        "rec_132"
+      ]
+    }
+  ],
+  "created_by": "LiteratureDiscoveryAgent",
+  "created_at": "2026-08-04T05:47:30.453388+00:00"
+}
+{
+  "route_id": "route_I",
+  "hyp_id": "hyp_017",
+  "target_composition": "Li5.4PS4.4Cl1.6 或 Li6PS5Cl0.5Br0.5 + ALD Al2O3 薄涂层（1-2 nm）",
+  "route_name": "ALD Al2O3 薄涂层包覆富卤素/混卤 argyrodite",
+  "priority": 9,
+  "linked_gap": "gap_016",
+  "expected_performance": "富卤素 Li5.4PS4.4Cl1.6 体相电导率 10 mS/cm（rec_345）、混卤 Li6PS5Cl0.5Br0.5 电导率 3.9 mS/cm（rec_045）；ALD Al2O3 薄涂层（1-2 nm）在纯 Li6PS5Cl 上可提升电导率至约2倍（rec_325）。预期联合后体相高电导保持，同时获得表面/空气稳定性增益。",
+  "precursors": "Li2S、P2S5、LiCl、LiBr（按富卤素或混卤化学计量配比）；ALD 前驱体：三甲基铝（TMA）+ H2O",
+  "steps": [
+    {
+      "step": 1,
+      "action": "固相/球磨合成富卤素或混卤 argyrodite 前驱体",
+      "conditions": "Li2S/P2S5/LiCl/LiBr 按 Li5.4PS4.4Cl1.6 或 Li6PS5Cl0.5Br0.5 化学计量，惰性气氛球磨",
+      "evidence": [
+        "rec_345",
+        "rec_045"
+      ]
+    },
+    {
+      "step": 2,
+      "action": "退火结晶成相",
+      "conditions": "惰性气氛下退火（富卤素/混卤体系需标定最优窗口，参考 430°C 附近）",
+      "evidence": [
+        "rec_345",
+        "rec_132"
+      ]
+    },
+    {
+      "step": 3,
+      "action": "ALD 沉积 Al2O3 薄涂层于 argyrodite 粉末表面",
+      "conditions": "TMA + H2O 循环，控制沉积厚度约 1-2 nm（避免过厚涂层阻挡 Li+）",
+      "evidence": [
+        "rec_325"
+      ]
+    },
+    {
+      "step": 4,
+      "action": "表征电导率、相、相对密度与空气稳定性",
+      "conditions": "EIS 测电导率，XRD 验相，记录相对密度与测试温度",
+      "evidence": [
+        "rec_325",
+        "rec_345"
+      ]
+    }
+  ],
+  "created_by": "LiteratureDiscoveryAgent",
+  "created_at": "2026-08-04T05:48:50.022362+00:00"
+}
+{
+  "route_id": "route_J",
+  "hyp_id": "hyp_018",
+  "target_composition": "Li6+xP1-xMxS5I（M=Ge/Sn/Si，x≈0.4-0.6）",
+  "route_name": "I 基 Ge/Sn/Si 取代 argyrodite 的退火/球磨工艺窗口优化",
+  "priority": 10,
+  "linked_gap": "gap_017",
+  "expected_performance": "I 基 Ge/Sn/Si 取代 argyrodite 体相电导率 5.4-7.8 mS/cm（rec_184/rec_397），较未取代 Li6PS5I（4.6×10⁻⁷ S/cm，rec_039）提升超三个数量级；退火窗口/球磨无序化工艺优化有望进一步释放本征迁移率（rec_027 中 430°C 峰值窗口、rec_024 中球磨无序化降 Ea 至 0.35 eV）。",
+  "precursors": "Li2S、P2S5、LiI、GeS2/SnS2/SiS2（按 Li6+xP1-xMxS5I 化学计量配比）",
+  "steps": [
+    {
+      "action": "固相/球磨合成 I 基 Ge/Sn/Si 取代 argyrodite 前驱体",
+      "conditions": "Li2S/P2S5/LiI/GeS2（或 SnS2/SiS2）按 Li6+xP1-xMxS5I 化学计量，惰性气氛球磨",
+      "evidence": [
+        "rec_184",
+        "rec_249"
+      ]
+    },
+    {
+      "action": "退火窗口扫描（390-550°C）",
+      "conditions": "惰性气氛下系统扫描退火温度与时长，参考 Cl/Br 体系 430°C 峰值窗口（rec_027）",
+      "evidence": [
+        "rec_184",
+        "rec_027"
+      ]
+    },
+    {
+      "action": "球磨无序化对比（可选）",
+      "conditions": "对比球磨无序化（降 Ea 至 0.35 eV，rec_024）与退火结晶路线",
+      "evidence": [
+        "rec_024"
+      ]
+    },
+    {
+      "action": "表征电导率、相、相对密度与活化能",
+      "conditions": "EIS 测电导率，XRD 验相，记录相对密度与测试温度，标定最优窗口",
+      "evidence": [
+        "rec_184",
+        "rec_397"
+      ]
+    }
+  ],
+  "created_by": "LiteratureDiscoveryAgent",
+  "created_at": "2026-08-04T05:49:25.305983+00:00"
+}
+{
+  "route_id": "route_K",
+  "hyp_id": "hyp_019",
+  "target_composition": "Li6.5[P0.25Si0.25Ge0.25Sb0.25]S5I 或 Li6.75Sb0.25Si0.75S5I（掺 LiI 免退火原位结晶）",
+  "route_name": "免退火两步机械化学球磨合成 Sb 基多阳离子/高熵 argyrodite（掺 LiI 降结晶温度）",
+  "priority": 11,
+  "linked_gap": "gap_018",
+  "expected_performance": "预期室温离子电导率 13-25 mS/cm 量级：rec_219 免退火两步机械化学球磨 Li5.2Si0.2Sb0.8S4Br0.25I1.75 达 13.23 mS/cm、低弹性模量 12.51 GPa；rec_493 Li6.75Sb0.25Si0.75S5I 达 13.1 mS/cm；rec_397 Li6.5Si0.5Sb0.5S5I 达 7.8 mS/cm、Ea 0.26 eV；rec_150 高熵 Li6.5[P0.25Si0.25Ge0.25Sb0.25]S5I Ea~0.2 eV。免退火工艺有望在保持高电导的同时降低弹性模量、简化工艺。",
+  "precursors": "Li2S、P2S5、SiS2/GeS2、Sb2S3、LiI（降结晶温度）、LiBr（可选，rec_219 用 Br/I 混卤）；按目标组成化学计量配比，LiI 掺量需标定（rec_219 中 LiI 将结晶温度降至约 250.72°C）",
+  "steps": [
+    {
+      "step": 1,
+      "action": "称量前驱体 Li2S/P2S5/SiS2/GeS2/Sb2S3/LiI（+LiBr）按目标组成化学计量混合",
+      "conditions": "Ar 手套箱内称量，避免水分/氧气",
+      "evidence": [
+        "rec_219",
+        "rec_150",
+        "rec_493"
+      ]
+    },
+    {
+      "step": 2,
+      "action": "第一步机械化学球磨（高能球磨）混合前驱体",
+      "conditions": "Ar 气氛，行星式球磨，转速与时长按 rec_219 两步法标定",
+      "evidence": [
+        "rec_219",
+        "rec_150"
+      ]
+    },
+    {
+      "step": 3,
+      "action": "第二步机械化学球磨，掺入 LiI 促进低温原位结晶",
+      "conditions": "LiI 将结晶温度降至约 250.72°C，免退火原位结晶（rec_219）",
+      "evidence": [
+        "rec_219"
+      ]
+    },
+    {
+      "step": 4,
+      "action": "免退火/低温处理（可选 ≤250°C 温和热处理）完成结晶",
+      "conditions": "免退火或低温（约 250°C）处理，避免高温退火破坏阳离子位点无序（区别于 rec_150 的 500°C 真空退火）",
+      "evidence": [
+        "rec_219",
+        "rec_150"
+      ]
+    },
+    {
+      "step": 5,
+      "action": "压片并表征相、相对密度、Ea、室温 EIS 与弹性模量",
+      "conditions": "记录压实方式、相对密度与测量温度（gap_010 可比口径）",
+      "evidence": [
+        "rec_219",
+        "rec_493",
+        "rec_397"
+      ]
+    }
+  ],
+  "created_by": "LiteratureDiscoveryAgent",
+  "created_at": "2026-08-04T05:50:31.775828+00:00"
+}
+{
+  "route_id": "route_L",
+  "hyp_id": "hyp_020",
+  "target_composition": "Li6PS5Cl0.5Br0.5 或 Li6.75Sb0.25Si0.75S5I",
+  "route_name": "热压致密化混卤/Sb 基高电导 argyrodite 合成路线（球磨合成 + 热压致密化）",
+  "priority": 12,
+  "linked_gap": "gap_019",
+  "expected_performance": "混卤 Li6PS5Cl0.5Br0.5 本征 3.9 mS/cm（rec_045）、富卤素 Li5.4PS4.4Cl1.6 10 mS/cm（rec_345）、Sb 基 Li6.75Sb0.25Si0.75S5I 13.1 mS/cm（rec_493）；热压致密化有望在保持体相高电导的同时降低孔隙/晶界阻抗（rec_563 中 LPSO HP+Annealed 达 1.22 mS/cm 正例），但需警惕 rec_210 反例（热压反而降低玻璃态电导率 3–4 倍），故以相对密度与测量温度作为可比口径（gap_010 要求）",
+  "precursors": "Li2S、P2S5、LiCl、LiBr（混卤路线）或 Li2S、P2S5、Sb2S3、SiS2、LiI（Sb 基路线），按目标化学计量配比",
+  "steps": [
+    {
+      "step": 1,
+      "action": "机械化学球磨合成前驱体（Li2S/P2S5/LiCl/LiBr 或 Li2S/P2S5/Sb2S3/SiS2/LiI）",
+      "conditions": "行星式球磨，氩气手套箱，500 rpm，24 h",
+      "evidence": [
+        "rec_045",
+        "rec_493"
+      ]
+    },
+    {
+      "step": 2,
+      "action": "（可选）低温退火结晶度调控",
+      "conditions": "真空密封石英安瓿，550°C（混卤）或 500°C（Sb 基）",
+      "evidence": [
+        "rec_045",
+        "rec_493"
+      ]
+    },
+    {
+      "step": 3,
+      "action": "热压致密化成型",
+      "conditions": "热压温度/压力窗口扫描（如 300–500°C、100–400 MPa），记录相对密度",
+      "evidence": [
+        "rec_563",
+        "rec_210"
+      ]
+    },
+    {
+      "step": 4,
+      "action": "EIS 电导率与活化能表征",
+      "conditions": "记录测量温度（如 25°C 与 60°C），报告相对密度与 Ea",
+      "evidence": [
+        "rec_210",
+        "rec_345"
+      ]
+    }
+  ],
+  "created_by": "LiteratureDiscoveryAgent",
+  "created_at": "2026-08-04T05:51:33.782588+00:00"
+}

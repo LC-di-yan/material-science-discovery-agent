@@ -1,0 +1,75 @@
+# 扩充查询词表 v3（定向补弱字段 + 家族扩面 · 目标语料 583 → 1000+）
+# 用法：python -m agent.run --stage search --queries queries/expansion_v3.txt --top-k 30
+# 设计依据（records 583 条字段覆盖）：air_stability 13% / activation_energy 13% /
+# annealing_time 13% / ball_milling 23% / annealing_temp 19%。
+# 另扩 LGPS / LPS / thio-LISICON / 卤化物电解质家族作对照体系。
+
+# --- 1. 空气/水分稳定性定向（air_stability 弱字段） ---
+sulfide solid electrolyte water stability H2S evolution rate comparison
+argyrodite air exposure time conductivity decay
+Li6PS5Cl air stability hours relative humidity quantified
+moisture tolerant sulfide electrolyte surface degradation XPS
+halide solid electrolyte air stability moisture advantage sulfide
+Li10GeP2S12 moisture stability decomposition
+Li3PS4 air stability improvement oxygen doping
+sulfide electrolyte humidity exposure operando impedance degradation
+dry room dew point sulfide electrolyte processing stability
+H2S gas detection sulfide electrolyte quantitative benchmark
+surface degradation mechanism Li6PS5Cl humidity XRD XPS
+argyrodite stability humidity temperature accelerated aging
+
+# --- 2. 活化能/变温输运（activation_energy 弱字段） ---
+variable temperature impedance spectroscopy argyrodite Arrhenius activation energy
+activation energy argyrodite halide composition dependence systematic
+low activation energy sulfide lithium conductor below 0.3 eV
+Arrhenius plot ionic conductivity sulfide electrolyte grain boundary bulk decoupled
+activation energy Li6PS5Cl Li6PS5Br comparison calorimetry NMR
+temperature dependent conductivity Li7La3Zr2O12 sulfide benchmark
+jump activation energy argyrodite NMR spin-lattice relaxation
+migration barrier sulfide solid electrolyte DFT NEB comparison experiment
+
+# --- 3. 球磨参数细节（ball_milling 弱字段） ---
+planetary ball mill rpm zirconia balls sulfide electrolyte synthesis parameters
+ball milling time ionic conductivity optimum argyrodite study
+ball size ratio zirconia jar sulfide solid electrolyte mechanochemistry
+high energy ball mill Li2S P2S5 amorphization crystallization argyrodite
+mechanochemical route sulfide electrolyte scalable ball milling parameters reported
+milling intensity effect Li6PS5Cl phase formation XRD
+wet milling vs dry milling sulfide electrolyte solvent
+ball milling argyrodite particle size conductivity correlation
+
+# --- 4. 退火时间/温度窗口（annealing_temp/time 弱字段） ---
+annealing time dependence argyrodite conductivity hours optimization
+heat treatment temperature window Li6PS5Cl 400 600 C phase purity
+two stage annealing sulfide electrolyte conductivity improvement
+cooling rate effect argyrodite disorder conductivity quenching furnace
+crystallization temperature sulfide glass argyrodite optimum annealing
+holding time sintering argyrodite relative density conductivity tradeoff
+annealing atmosphere argon vacuum sulfide electrolyte decomposition suppression
+
+# --- 5. 家族扩面：LGPS / LPS / thio-LISICON ---
+Li10GeP2S12 LGPS synthesis conductivity structure
+LGPS type Li9.54Si1.74P1.44S11.7Cl0.3 superionic conductor
+Li7GePS8 LGPS family halide substitution conductivity
+Li2S-P2S5 glass ceramic Li3PS4 crystallization conductivity
+Li7P3S11 Li3PS4 thio-LISICON family synthesis conductivity
+beta-Li3PS4 low temperature synthesis conductivity
+Li3PS4 precursor glass hot press densification
+thio-LISICON Li3.25Ge0.25P0.75S4 conductivity optimization
+sulfide glass electrolyte 75Li2S-25P2S5 conductivity annealing
+Li-S-P ternary phase diagram solid electrolyte composition map
+
+# --- 6. 家族扩面：卤化物电解质对照体系 ---
+Li3YCl6 Li3InCl6 halide solid electrolyte synthesis conductivity
+Li2ZrCl6 halide electrolyte moisture stable ionic conductivity
+Li3MCl6 M Y In Sc rare earth halide electrolyte comparison
+halide solid electrolyte cold pressing densification humidity tolerance
+chloride electrolyte Li2O-ZrCl4 mechanochemical synthesis
+halide vs sulfide electrolyte conductivity stability tradeoff review
+
+# --- 7. 报告口径/可复现性（gap_010 判据补检） ---
+solid electrolyte conductivity measurement protocol reporting standards
+stack pressure effect sulfide electrolyte pellet conductivity reproducibility
+sample geometry electrode blocking impedance sulfide electrolyte artifact
+interlaboratory reproducibility ionic conductivity solid electrolyte round robin
+electrolyte pellet preparation method effect conductivity comparison study

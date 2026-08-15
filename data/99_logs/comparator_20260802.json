@@ -1,0 +1,305 @@
+{
+  "comparison_id": "comparator_20260802_v1",
+  "comparison_date": "2026-08-02",
+  "protocol": "统一对照协议（§4.4.5）：同一冻结语料、同一 schema、同一审计规则；以路线步骤为最小审计单元。",
+  "corpus_snapshot": {
+    "records": 339,
+    "content_files": 346,
+    "hypotheses": 12,
+    "gaps": 11
+  },
+  "arms": {
+    "fixed": {
+      "label": "固定工艺基线（文献标准 Li6PS5Cl）",
+      "n_routes": 1,
+      "metrics": {
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "temp_label_compliance": 1.0,
+        "constraint_pass_rate": 1.0,
+        "precedent_hit_rate": 0.5,
+        "retraction_rate": 0.0,
+        "retraction_detail": {
+          "note": "该生成臂按协议不执行反证处理机制"
+        }
+      }
+    },
+    "purellm": {
+      "label": "纯 LLM 基线（无检索、无证据注入）",
+      "n_routes": 4,
+      "metrics": {
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "temp_label_compliance": 1.0,
+        "constraint_pass_rate": 0.95,
+        "precedent_hit_rate": 1.0,
+        "retraction_rate": 0.0,
+        "retraction_detail": {
+          "note": "该生成臂按协议不执行反证处理机制"
+        }
+      }
+    },
+    "random": {
+      "label": "随机拼接基线（固定种子，从已记录字段随机拼装）",
+      "n_routes": 4,
+      "metrics": {
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "temp_label_compliance": 0.75,
+        "constraint_pass_rate": 0.8125,
+        "precedent_hit_rate": 0.5,
+        "retraction_rate": 0.0,
+        "retraction_detail": {
+          "note": "该生成臂按协议不执行反证处理机制"
+        }
+      }
+    },
+    "lit": {
+      "label": "文献 Agent（检索+抽取+Gap+证据回溯+反证收缩）",
+      "n_routes": 4,
+      "metrics": {
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "temp_label_compliance": 0.5,
+        "constraint_pass_rate": 1.0,
+        "precedent_hit_rate": 0.375,
+        "retraction_rate": 0.1667,
+        "retraction_detail": {
+          "rate": 0.1667,
+          "narrowed_hypotheses": [
+            "hyp_007",
+            "hyp_009"
+          ],
+          "total_hypotheses": 12,
+          "boundary_update_gaps": [
+            "gap_011"
+          ]
+        }
+      }
+    }
+  },
+  "routes": [
+    {
+      "arm": "fixed",
+      "route_id": "fixed_route_D",
+      "target_composition": "Li6PS5Cl",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "purellm",
+      "route_id": "llm_route_1",
+      "target_composition": "Li6PS5Cl0.5Br0.5",
+      "metrics": {
+        "n_steps": 3,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 0.8,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 1.0
+      }
+    },
+    {
+      "arm": "purellm",
+      "route_id": "llm_route_2",
+      "target_composition": "Li6PS5I",
+      "metrics": {
+        "n_steps": 3,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 1.0
+      }
+    },
+    {
+      "arm": "purellm",
+      "route_id": "llm_route_3",
+      "target_composition": "Li6PS5Cl@Li2ZrO3（表面包覆5wt% Li2ZrO3）",
+      "metrics": {
+        "n_steps": 3,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 1.0
+      }
+    },
+    {
+      "arm": "purellm",
+      "route_id": "llm_route_4",
+      "target_composition": "Li6.5PS5.25Cl0.75I0.25（富卤素、富锂变体）",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 4,
+        "numeric_claims": 4,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 1.0
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_1",
+      "target_composition": "La_{(1-x)/3}Li_xNbO3 (LLNO)",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 0,
+        "constraint_pass_rate": 0.75,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_2",
+      "target_composition": "Li3MX6 (X=Cl, Br, I)",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 0,
+        "constraint_pass_rate": 0.75,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_3",
+      "target_composition": "Na6SbS5I, Na5SbS4I2, Na-P-Se-X (X=Cl, Br, I)",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 0.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 0.75,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_4",
+      "target_composition": "Br-doped argyrodite (Li6PS5Cl / Li6PS5Br)",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "lit",
+      "route_id": "lit_route_A",
+      "target_composition": "Li6PS5Cl0.5Br0.5",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 3,
+        "temp_label_compliance": 0.0,
+        "conductivity_mentions": 3,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.25
+      }
+    },
+    {
+      "arm": "lit",
+      "route_id": "lit_route_B",
+      "target_composition": "Li6PS5Cl0.75Br0.25 + UDSH 表面疏水修饰",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 4,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.25
+      }
+    },
+    {
+      "arm": "lit",
+      "route_id": "lit_route_C",
+      "target_composition": "Li5.5PS4.5Cl1.5（球磨无序化 + 退火致密化）",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 2,
+        "temp_label_compliance": 0.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "lit",
+      "route_id": "lit_route_D",
+      "target_composition": "Li6PS5Cl",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    }
+  ],
+  "interpretation": "对照输出是文献证据审计结果，不是湿实验性能，也不是模型间排行榜。有证据步骤比例和无证据断言率衡量证据链可回溯性；测量温度标签合规率要求室温/升温/理论/引用他文分开；组成/工艺约束与先例命中衡量化学与先例合理性；反证后假设收缩率仅文献 Agent 具备。"
+}

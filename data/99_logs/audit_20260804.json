@@ -1,0 +1,70 @@
+{
+  "audit_id": "knowledge_quality",
+  "audit_date": "2026-08-04",
+  "audit_type": "deterministic_local_knowledge_audit",
+  "scope": "gaps/hypotheses/routes anchor integrity, duplication, temp labels; no LLM or network.",
+  "corpus": {
+    "records": 778,
+    "content_files": 778,
+    "gaps": 19,
+    "hypotheses": 20,
+    "routes": 12
+  },
+  "gaps": {
+    "total": 19,
+    "anchor_ok": 19,
+    "anchor_ok_rate": 1.0,
+    "issues": []
+  },
+  "hypotheses": {
+    "total": 20,
+    "anchor_ok": 20,
+    "anchor_ok_rate": 1.0,
+    "issues": []
+  },
+  "routes": {
+    "total": 12,
+    "anchor_ok": 12,
+    "anchor_ok_rate": 1.0,
+    "issues": []
+  },
+  "near_duplicates": [],
+  "id_sequences": {
+    "gaps": {
+      "total": 19,
+      "numbered": 19,
+      "duplicates": [],
+      "missing_numbers": [],
+      "next_expected": "gap_020"
+    },
+    "hypotheses": {
+      "total": 20,
+      "numbered": 20,
+      "duplicates": [],
+      "missing_numbers": [],
+      "next_expected": "hyp_021"
+    },
+    "routes": {
+      "total": 12,
+      "route_ids": [
+        "route_A",
+        "route_B",
+        "route_C",
+        "route_D",
+        "route_E",
+        "route_F",
+        "route_G",
+        "route_H",
+        "route_I",
+        "route_J",
+        "route_K",
+        "route_L"
+      ]
+    }
+  },
+  "summary": {
+    "total_issues": 0,
+    "verdict": "PASS",
+    "interpretation": "全部知识层条目锚点有效且无重复/引用缺陷。"
+  }
+}

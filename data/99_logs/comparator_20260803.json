@@ -1,0 +1,816 @@
+{
+  "comparison_id": "comparator_20260803_v2",
+  "comparison_date": "2026-08-03",
+  "audited_corpus": "data/99_logs/evaluation_20260802.json（冻结语料快照）",
+  "protocol": "统一对照协议（§4.4.5）：同一冻结语料、同一 schema、同一审计规则；以路线步骤为最小审计单元。",
+  "corpus_snapshot": {
+    "records": 339,
+    "content_files": 346,
+    "hypotheses": 12,
+    "gaps": 11
+  },
+  "arms": {
+    "fixed": {
+      "label": "固定工艺基线（文献标准 Li6PS5Cl）",
+      "n_routes": 1,
+      "metrics": {
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "temp_label_compliance": 1.0,
+        "constraint_pass_rate": 1.0,
+        "precedent_hit_rate": 0.5,
+        "retraction_rate": 0.0,
+        "retraction_detail": {
+          "note": "该生成臂按协议不执行反证处理机制"
+        }
+      }
+    },
+    "purellm": {
+      "label": "纯 LLM 基线（无检索、无证据注入）",
+      "n_routes": 10,
+      "metrics": {
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "temp_label_compliance": 1.0,
+        "constraint_pass_rate": 1.0,
+        "precedent_hit_rate": 0.605,
+        "retraction_rate": 0.0,
+        "retraction_detail": {
+          "note": "该生成臂按协议不执行反证处理机制"
+        }
+      }
+    },
+    "random": {
+      "label": "随机拼接基线（固定种子，从已记录字段随机拼装）",
+      "n_routes": 20,
+      "metrics": {
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "temp_label_compliance": 0.5167,
+        "constraint_pass_rate": 0.84,
+        "precedent_hit_rate": 0.5,
+        "retraction_rate": 0.0,
+        "retraction_detail": {
+          "note": "该生成臂按协议不执行反证处理机制"
+        }
+      }
+    },
+    "lit": {
+      "label": "文献 Agent（检索+抽取+Gap+证据回溯+反证收缩）",
+      "n_routes": 12,
+      "metrics": {
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "temp_label_compliance": 0.8333,
+        "constraint_pass_rate": 0.9792,
+        "precedent_hit_rate": 0.1458,
+        "retraction_rate": 0.1667,
+        "retraction_detail": {
+          "rate": 0.1667,
+          "narrowed_hypotheses": [
+            "hyp_007",
+            "hyp_009"
+          ],
+          "total_hypotheses": 12,
+          "boundary_update_gaps": [
+            "gap_011"
+          ]
+        }
+      }
+    }
+  },
+  "routes": [
+    {
+      "arm": "fixed",
+      "route_id": "fixed_route_D",
+      "target_composition": "Li6PS5Cl",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "purellm",
+      "route_id": "llm_route_1",
+      "target_composition": "Li6PS5Cl",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.75
+      }
+    },
+    {
+      "arm": "purellm",
+      "route_id": "llm_route_2",
+      "target_composition": "Li6PS5Br",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.25
+      }
+    },
+    {
+      "arm": "purellm",
+      "route_id": "llm_route_3",
+      "target_composition": "Li6PS5Cl@Li2SiO3（表面包覆2 wt%）",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.75
+      }
+    },
+    {
+      "arm": "purellm",
+      "route_id": "llm_route_4",
+      "target_composition": "Li6PS5Cl0.5Br0.5",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.75
+      }
+    },
+    {
+      "arm": "purellm",
+      "route_id": "llm_route_5",
+      "target_composition": "Li6PS5Cl",
+      "metrics": {
+        "n_steps": 5,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 4,
+        "numeric_claims": 4,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.8
+      }
+    },
+    {
+      "arm": "purellm",
+      "route_id": "llm_route_6",
+      "target_composition": "Li6PS5Br",
+      "metrics": {
+        "n_steps": 5,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 5,
+        "numeric_claims": 5,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.4
+      }
+    },
+    {
+      "arm": "purellm",
+      "route_id": "llm_route_7",
+      "target_composition": "Li6PS5Cl@Li3N (核壳结构，Li3N质量分数约2%)",
+      "metrics": {
+        "n_steps": 5,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 5,
+        "numeric_claims": 5,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.8
+      }
+    },
+    {
+      "arm": "purellm",
+      "route_id": "llm_route_8",
+      "target_composition": "Li5.5PS4.5Cl1.5 (富氯型硫银锗矿变体)",
+      "metrics": {
+        "n_steps": 5,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 5,
+        "numeric_claims": 5,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.8
+      }
+    },
+    {
+      "arm": "purellm",
+      "route_id": "llm_route_9",
+      "target_composition": "Li6PS5Cl",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 4,
+        "numeric_claims": 4,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "purellm",
+      "route_id": "llm_route_10",
+      "target_composition": "Li6PS5Cl0.8Br0.2",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 4,
+        "numeric_claims": 4,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.25
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_1",
+      "target_composition": "La_{(1-x)/3}Li_xNbO3 (LLNO)",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 0,
+        "constraint_pass_rate": 0.75,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_2",
+      "target_composition": "Li3MX6 (X=Cl, Br, I)",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 0,
+        "constraint_pass_rate": 0.75,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_3",
+      "target_composition": "Na6SbS5I, Na5SbS4I2, Na-P-Se-X (X=Cl, Br, I)",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 0.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 0.75,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_4",
+      "target_composition": "Br-doped argyrodite (Li6PS5Cl / Li6PS5Br)",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_5",
+      "target_composition": "Li4Ln[PS4]2Cl (Ln=Pr, Nd, Sm)",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_6",
+      "target_composition": "Li3PS4; Li7P3S11; Li6PS5Cl; Li4SnS4; LiSiPSCI",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 0.8,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_7",
+      "target_composition": "Li6PS5Cl, Li6PS5Br (卤素取代)",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 0.8,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_8",
+      "target_composition": "Li2S-P2S5, Li6PS5Cl",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_9",
+      "target_composition": "Li6PS5Cl",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 0.3333,
+        "conductivity_mentions": 3,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_10",
+      "target_composition": "Li2.125Sc0.375In0.25Cl4 (LSIC)",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 0.75,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_11",
+      "target_composition": "Na3SbS4 / Na3PS4 及掺杂体系",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 0.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 0.75,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_12",
+      "target_composition": "Li6PS5-xOxBr (x=0.3)",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 0.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 0.8,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_13",
+      "target_composition": "80Li2S·20P2S5",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 0.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_14",
+      "target_composition": "Li3YCl6",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 0.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 0.75,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_15",
+      "target_composition": "Li6PS5X（champion = Li6PS5Br）",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 0.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 0.8,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_16",
+      "target_composition": "Li6PS5Cl",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_17",
+      "target_composition": "Li6PS5Cl",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 0.8,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_18",
+      "target_composition": "Li3InCl6",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 0.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 0.75,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_19",
+      "target_composition": "Li3PS4",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 0.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 0.8,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "random",
+      "route_id": "rnd_route_20",
+      "target_composition": "0.4LiI·0.6Li4SnS4",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 0.0,
+        "unsupported_claim_rate": 1.0,
+        "unsupported_claims": 3,
+        "numeric_claims": 3,
+        "temp_label_compliance": 0.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 0.75,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "lit",
+      "route_id": "lit_route_A",
+      "target_composition": "Li6PS5Cl0.5Br0.5",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 3,
+        "temp_label_compliance": 0.0,
+        "conductivity_mentions": 3,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.25
+      }
+    },
+    {
+      "arm": "lit",
+      "route_id": "lit_route_B",
+      "target_composition": "Li6PS5Cl0.75Br0.25 + UDSH 表面疏水修饰",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 4,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.25
+      }
+    },
+    {
+      "arm": "lit",
+      "route_id": "lit_route_C",
+      "target_composition": "Li5.5PS4.5Cl1.5（球磨无序化 + 退火致密化）",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 2,
+        "temp_label_compliance": 0.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "lit",
+      "route_id": "lit_route_D",
+      "target_composition": "Li6PS5Cl",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 3,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 1,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.5
+      }
+    },
+    {
+      "arm": "lit",
+      "route_id": "lit_hyp_hyp_002",
+      "target_composition": "Li6+xPS5+xCl0.5Br0.5-x",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 1,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 0,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.0
+      }
+    },
+    {
+      "arm": "lit",
+      "route_id": "lit_hyp_hyp_003",
+      "target_composition": "Li6PS5F0.3Cl0.7",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 1,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 0,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.0
+      }
+    },
+    {
+      "arm": "lit",
+      "route_id": "lit_hyp_hyp_005",
+      "target_composition": "Li6PS5I",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 1,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 0,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.0
+      }
+    },
+    {
+      "arm": "lit",
+      "route_id": "lit_hyp_hyp_006",
+      "target_composition": "Li6+xP1-xSnxS5Cl",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 1,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 0,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.0
+      }
+    },
+    {
+      "arm": "lit",
+      "route_id": "lit_hyp_hyp_007",
+      "target_composition": "Li4SiO4",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 0,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 0,
+        "constraint_pass_rate": 0.75,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.0
+      }
+    },
+    {
+      "arm": "lit",
+      "route_id": "lit_hyp_hyp_008",
+      "target_composition": "Li6-x-3yAlyPS5-xCl1+x",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 1,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 0,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 4,
+        "precedent_hit_rate": 0.0
+      }
+    },
+    {
+      "arm": "lit",
+      "route_id": "lit_hyp_hyp_010",
+      "target_composition": "Li6PS5Cl0.5Br0.5",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 1,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 2,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.0
+      }
+    },
+    {
+      "arm": "lit",
+      "route_id": "lit_hyp_hyp_012",
+      "target_composition": "Li5.5PS4.5Cl1.5",
+      "metrics": {
+        "n_steps": 4,
+        "supported_step_rate": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "unsupported_claims": 0,
+        "numeric_claims": 1,
+        "temp_label_compliance": 1.0,
+        "conductivity_mentions": 0,
+        "constraint_pass_rate": 1.0,
+        "constraint_checked": 5,
+        "precedent_hit_rate": 0.25
+      }
+    }
+  ],
+  "interpretation": "对照输出是文献证据审计结果，不是湿实验性能，也不是模型间排行榜。样本量：固定 1、纯 LLM 10、随机 20、文献 Agent 12；固定基线按参与规则只有组成/压实/热史/测量温度齐全的 route_D 合格。可回溯性（有证据步骤/无证据断言）仍是检索+抽取+证据回溯的产物：文献 Agent 与固定基线 100% 锚定可回溯原文，纯 LLM 与随机基线按协议 0%/100%。先例命中衡量步骤条件与语料记录值（温度/时间/工艺词）的重合，不等于证据可回溯：纯 LLM 60% > 随机 50% > 文献 Agent 15%，后者派生路线以支持记录为证据锚点但步骤条件多为通用描述，不与具体记录值重合。温度标签审计仍精确标记阶段 I 初始路线 route_A/C 的电导率断言缺测量温度标签（temp 0%），route_D/B 通过，8 条派生路线大多不声称新电导率数值（100% 空过），若声称则按同一规则标记，文献 Agent 总 temp 83%。约束通过率：文献 Agent 98%——hyp_007 氧化物壳层路线因目标组成只给定氧化物式（Li4SiO4，无 P/S）被标记，说明组成未完整给定会被约束审计捕获；随机 84%（池中混入无 Li-P-S 组成）。反证后假设收缩率仅文献 Agent 具备（hyp_007/hyp_009 经 gap_011 边界更新收窄）。"
+}
