@@ -135,14 +135,12 @@
   .bar-row{display:grid;grid-template-columns:160px 1fr 64px;align-items:center;gap:12px;font-size:12.5px;}
   .bar-row .lbl{color:var(--muted);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .bar-row .track{background:var(--surface-2);border-radius:6px;height:15px;overflow:hidden;}
-  .bar-row .fill{height:100%;border-radius:6px;position:relative;transform:scaleX(0);transform-origin:left;
-    background:linear-gradient(90deg,var(--accent-deep),var(--accent));
-    animation:growX .85s cubic-bezier(.2,.7,.3,1) forwards;}
+  .bar-row .fill{height:100%;border-radius:6px;position:relative;
+    background:linear-gradient(90deg,var(--accent-deep),var(--accent));}
   .bar-row .fill::after{content:"";position:absolute;inset:0;
     background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);
     transform:translateX(-100%);animation:shine 2.6s ease infinite;}
   @keyframes shine{60%,100%{transform:translateX(100%)}}
-  @keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
   .bar-row .pct{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:700;font-size:12.5px;}
 
   /* ===== 表格 ===== */
@@ -180,8 +178,8 @@
   .donut{width:164px;height:164px;flex-shrink:0;}
   .donut .ring-bg{fill:none;stroke:var(--surface-2);stroke-width:15;}
   .donut .ring{fill:none;stroke:var(--accent);stroke-width:15;stroke-linecap:round;
-    stroke-dasharray:0 999;transform:rotate(-90deg);transform-origin:center;
-    transition:stroke-dasharray 1.3s cubic-bezier(.2,.7,.3,1);filter:drop-shadow(0 0 6px rgba(45,212,191,.35));}
+    stroke-dasharray:53.72 314.16;transform:rotate(-90deg);transform-origin:center;
+    filter:drop-shadow(0 0 6px rgba(45,212,191,.35));}
   .donut-legend{display:flex;flex-direction:column;gap:11px;font-size:13px;}
   .donut-legend .li{display:flex;align-items:center;gap:9px;color:var(--muted);}
   .donut-legend .sw{width:11px;height:11px;border-radius:3px;flex-shrink:0;}
@@ -505,10 +503,7 @@ function animateNumbers(){
 }
 animateNumbers();
 
-// ===== 环图动画 =====
-const R = 50, C = 2 * Math.PI * R;
-const ring = document.getElementById('ring-argy');
-setTimeout(() => { ring.style.strokeDasharray = (C * 0.171) + ' ' + C; }, 250);
+// ===== 环图（CSS 静态正确显示，无需 JS 触发）=====
 
 // ===== 条形图渲染 =====
 function bars(elId, rows, max){
