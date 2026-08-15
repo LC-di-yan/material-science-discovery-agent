@@ -480,8 +480,18 @@ function show(id){
   sections.forEach(s => s.classList.toggle('active', s.id === id));
 }
 tabs.forEach(b => b.addEventListener('click', () => {
-  show(b.dataset.t); window.scrollTo({top:0, behavior:'smooth'}); revealCheck();
+  show(b.dataset.t);
+  history.replaceState(null, '', '#' + b.dataset.t);
+  window.scrollTo({top:0, behavior:'smooth'}); revealCheck();
 }));
+
+// ===== hash 深链接（如 #data 直达某 tab）=====
+function applyHash(){
+  const id = location.hash.slice(1);
+  if(id && document.querySelector('section#' + id)) show(id);
+}
+applyHash();
+addEventListener('hashchange', applyHash);
 
 // ===== 滚动入场 =====
 const io = new IntersectionObserver(es => es.forEach(e => {
